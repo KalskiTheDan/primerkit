@@ -1,7 +1,7 @@
 <h1 align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/readme/hero-header-dark.png">
-    <img alt="PRIMERKIT, market work at agent speed: from question to action. The PK mark at the centre, linked to Briefings, Checks, Journal and Broker, the broker switched off" src="assets/readme/hero-header-light.png" width="100%">
+    <img alt="PRIMERKIT, market work at agent speed: from idea to action. The PK mark at the centre, linked to Briefings, Checks, Journal and Broker, the broker switched off" src="assets/readme/hero-header-light.png" width="100%">
   </picture>
 </h1>
 
@@ -9,10 +9,11 @@
   <a href="https://www.npmjs.com/package/primerkit"><img alt="npm" src="https://img.shields.io/npm/v/primerkit"></a>
   <a href="https://nodejs.org"><img alt="Node 22.12 or later" src="https://img.shields.io/badge/node-%3E%3D22.12-339933"></a>
   <a href="LICENSE"><img alt="Licence: Apache 2.0" src="https://img.shields.io/badge/licence-Apache%202.0-blue"></a>
+  <a href="https://primerkit.ai"><img alt="Website: primerkit.ai" src="https://img.shields.io/badge/website-primerkit.ai-black"></a>
   <a href="https://www.prereason.com"><img alt="Data: PreReason" src="https://img.shields.io/badge/data-PreReason-informational"></a>
 </p>
 
-**Market work at agent speed: from question to action.** Open source. primerkit hands your agent PreReason's current briefings with every line numbered, checks each answer against those lines in code, and keeps every run in a journal on your machine. Nothing here is investment advice: the model never proposes a strategy, and answers from the data or applies rules you wrote yourself.
+**Market work at agent speed: from idea to action.** Open source. primerkit hands your agent PreReason's current briefings with every line numbered, checks each answer against those lines in code, and keeps every run in a journal on your machine. Nothing here is investment advice: the model never proposes a strategy, and answers from the data or applies rules you wrote yourself.
 
 <table>
 <tr><td><b>The agent's own workplace</b></td><td>You pick where the model runs: an AI app you already use (such as Claude Code, on its own subscription), a hosted model on your own key, or a model on this machine (Ollama or LM Studio). primerkit's own session in a terminal (<code>npx primerkit</code>) draws the boards and charts; in Claude Code, Codex, Gemini CLI or LM Studio, your agent calls primerkit's tools as part of its own work.</td></tr>
@@ -181,6 +182,8 @@ Keys live elsewhere: PreReason's, once you connect, in PreReason's own file, `~/
 ## Disclaimer and licence
 
 This software runs on your machine with a model you choose. Your model and your rules make every decision. Nothing here is investment advice. PreReason, the default data connection, publishes general market briefings, the same for everyone on the same plan, and never sees your questions, answers, holdings or orders. Broker connections stay off until you turn them on, and Alpaca is connected on paper only.
+
+primerkit is published only at github.com/KalskiTheDan/primerkit, as the npm package primerkit, and at primerkit.ai. primerkit itself has no token, coin or paid offer.
 
 primerkit is under the Apache License 2.0: see [LICENSE](LICENSE) and [NOTICE](NOTICE).
 

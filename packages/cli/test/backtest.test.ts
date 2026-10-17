@@ -258,7 +258,12 @@ describe('primerkit backtest', () => {
       const at = await run(home, ['routine', 'btc-rules', 'track', '--at', '7:30', ...model]);
       expect(at.code).toBe(0);
       expect(at.out).toContain('The entry primerkit adds to');
-      expect(at.out).toContain('routine btc-rules track');
+      // launchd gives each word of the command its own string; Task Scheduler and cron write the
+      // command line as one. CONTROL: each platform's entry is never the other form.
+      const entry = { launchd: '<string>routine</string><string>btc-rules</string><string>track</string>', line: 'routine btc-rules track' };
+      const [own, other] = process.platform === 'darwin' ? [entry.launchd, entry.line] : [entry.line, entry.launchd];
+      expect(at.out).toContain(own);
+      expect(at.out).not.toContain(other);
       expect(at.out).toContain('Nothing was added. Run the same command with --yes to add it.');
       // With no PreReason key there is nothing to run on, and the model is asked nothing.
       const now = await run(home, ['routine', 'btc-rules', 'track', ...model]);

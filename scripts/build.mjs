@@ -45,7 +45,7 @@ async function buildPackage() {
   const pkg = {
     name: 'primerkit',
     version: cli.version,
-    description: 'Market work at agent speed: from question to action. Open source.',
+    description: 'Market work at agent speed: from idea to action. Open source.',
     // The MCP Registry lists an npm server only when its package names the registry entry.
     mcpName: 'io.github.KalskiTheDan/primerkit',
     license: 'Apache-2.0',

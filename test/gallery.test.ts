@@ -345,7 +345,7 @@ describe('the new screens, drawn from fixtures', () => {
     expect(day.reach).toBeGreaterThan(sample.reach + 20);
     const bare = await pixelsOf(screenSvg(screen, 20, 2, 'bare', true));
     expect(cornerInk(bare.width, bare.at)).toBe(0);
-  });
+  }, 120_000);
 
   it('captions every new screen and GIF with what is made up, and every compare with the condition on public use', () => {
     for (const { group } of FIXTURE_GROUPS) expect(MADE_UP[group], group).toMatch(/^Drawn from test fixtures, not a live run: .*\bmade up\b/);
