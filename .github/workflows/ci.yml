@@ -1,0 +1,38 @@
+# Typecheck, the tests, and the npm package built, installed and run from an empty folder,
+# on Linux, Windows and macOS. On a push or a pull request it runs in a public repository
+# only: in a private one the job is skipped, so it costs nothing there. Started by hand
+# (Actions, ci, Run workflow), it runs once wherever it is, private or public.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    if: ${{ !github.event.repository.private || github.event_name == 'workflow_dispatch' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npx vitest run
+      - run: npm run smoke

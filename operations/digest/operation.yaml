@@ -1,0 +1,24 @@
+# The daily digest: what changed in your briefings since the last one.
+id: digest
+# 0.2.0 (2026-10-14): grounded_directions, so a change says no direction that neither its
+# line nor its diff item holds.
+version: 0.2.0
+kind: research
+title: What changed in your briefings
+inputs:
+  - name: briefings
+    type: string[]
+    required: true
+data:
+  sources:
+    # Code computes the diff from the served JSON before the model is asked. The model
+    # reads the diff and the lines of today's briefings it names, and writes one
+    # sentence for each item.
+    - connector: prereason
+      briefing: { from: input }
+      format: json
+  maxPacketTokens: 12000
+output:
+  schema: schema.json
+  forbiddenFields: [action, side, size]
+checks: [schema, citations, grounded_numbers, grounded_directions, scope, in_diff, coverage]

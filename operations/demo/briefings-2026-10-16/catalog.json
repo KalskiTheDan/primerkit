@@ -1,0 +1,603 @@
+{
+  "usage": {
+    "fetch_one": "GET /api/context?briefing={id}",
+    "alias": "GET /api/briefings/{id}",
+    "auth": "Authorization: Bearer YOUR_API_KEY (or X-API-Key)",
+    "formats": "markdown (default) or ?format=json"
+  },
+  "briefing_counts": {
+    "free": 6,
+    "basic": 15,
+    "pro": 13,
+    "total": 34
+  },
+  "briefings": [
+    {
+      "id": "btc.quick-check",
+      "name": "Quick Check",
+      "description": "Quick check of Bitcoin's price and net liquidity, each with its recent changes, and their 30-day correlation",
+      "href": "/api/context?briefing=btc.quick-check",
+      "tier": "free",
+      "metrics_count": 2,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.context",
+      "name": "BTC Context",
+      "description": "Bitcoin price, mining health, and liquidity overview with 7-day and 30-day trends",
+      "href": "/api/context?briefing=btc.context",
+      "tier": "free",
+      "metrics_count": 5,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "macro.snapshot",
+      "name": "Macro Snapshot",
+      "description": "Fed balance sheet, M2 money supply, Treasury yields at 2Y, 10Y and 30Y, 10Y breakeven inflation, dollar strength (the UUP ETF), and composite net liquidity with trend direction across all four, plus global central-bank balance-sheet overlay (BOJ total assets, ECB total assets, Eurozone M3) for cross-region liquidity context; and the latest US releases as published: the Employment Situation (nonfarm payrolls and the unemployment rate), the Consumer Price Index and the weekly jobless claims, each with what it revised and the next release date",
+      "href": "/api/context?briefing=macro.snapshot",
+      "tier": "free",
+      "metrics_count": 15,
+      "correlations_count": 2,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "cross.correlations",
+      "name": "Correlation Check",
+      "description": "How Bitcoin correlates with equities, volatility, and the dollar across 10 metric pairs (30 and 90 day windows)",
+      "href": "/api/context?briefing=cross.correlations",
+      "tier": "free",
+      "metrics_count": 9,
+      "correlations_count": 10,
+      "features": {
+        "momentum": false,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.pulse",
+      "name": "BTC Pulse",
+      "description": "Quick Bitcoin price check: price, 24h change and dominance",
+      "href": "/api/context?briefing=btc.pulse",
+      "tier": "free",
+      "metrics_count": 3,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.grid-stress",
+      "name": "Grid Stress",
+      "description": "Mining network health: block production speed against the 10-minute target and the direction it points for the next difficulty adjustment, with hash rate and the hash ribbon",
+      "href": "/api/context?briefing=btc.grid-stress",
+      "tier": "free",
+      "metrics_count": 4,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.momentum",
+      "name": "BTC Momentum",
+      "description": "Bitcoin momentum over 7, 30 and 90 days with percentile rankings, distance from the 200-day moving average, 24h volume and its 30-day Z-score, hash rate, dollar strength, net liquidity, and BTC perpetual futures positioning (funding rate and open interest)",
+      "href": "/api/context?briefing=btc.momentum",
+      "tier": "basic",
+      "derivatives": true,
+      "metrics_count": 12,
+      "correlations_count": 2,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "macro.liquidity",
+      "name": "Liquidity Momentum",
+      "description": "One state of US dollar liquidity (adding, steady or draining, from net liquidity's 30 day change) with its drivers, their sources and known times, bank reserves from the Federal Reserve Board's H.4.1, and repo against the Fed's range; plus Fed balance, Treasury General Account, M2 money supply, composite net liquidity tracking with 7d/30d/90d trend changes and percentile rankings, NY Fed System Open Market Account (SOMA) total holdings, and daily reverse-repo take-up",
+      "href": "/api/context?briefing=macro.liquidity",
+      "tier": "basic",
+      "metrics_count": 8,
+      "correlations_count": 4,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "macro.auctions",
+      "name": "Treasury Auction Calendar and Dynamics",
+      "description": "Who bought at the latest auction of each Treasury note and bond maturity: size, high yield, bid-to-cover and the shares of primary dealers, direct and indirect bidders, each against that maturity's own prior auctions; then the auctions announced and scheduled next; then Treasury's newest buyback operations as its record states them (maturity bucket, maximum, par offered and accepted).",
+      "href": "/api/context?briefing=macro.auctions",
+      "tier": "basic",
+      "metrics_count": 3,
+      "correlations_count": 0,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "macro.calendar",
+      "name": "Macro Calendar: Releases, Decisions and Auctions",
+      "description": "The scheduled dates ahead and the latest US releases as they came out: the next Producer Price Index, retail sales, GDP and Personal Income and Outlays releases, the FOMC minutes, the Federal Reserve's and the ECB's next decisions, Treasury's next quarterly refunding release and the Treasury coupon auctions of the week ahead on Treasury's tentative schedule, or the next one when the week has none, each dated from its publisher's own calendar (dates only, no figures from them); and the US Employment Situation, Consumer Price Index and weekly initial claims as release state: for each, the latest release and when it came out, its headline figures within that one release with each figure's estimate (first, second, advance, revised), what the release revised, and the next scheduled release, all from the publishers' own figures with every version kept. Beside it the federal funds rate, the days to the next Treasury auction, euro area HICP and the BoJ policy rate.",
+      "href": "/api/context?briefing=macro.calendar",
+      "tier": "basic",
+      "metrics_count": 4,
+      "correlations_count": 0,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "cross.ai-compute",
+      "name": "AI Compute and Power Chain",
+      "description": "The AI compute and power chain: Korea's semiconductor exports for the first 20 days of the month as Korea Customs Service states them (the change on the same days a year earlier and the share of all exports), average US grid demand over the newest 7 days for the Lower 48, ERCOT and PJM against the same dates a year earlier and the trailing 365 days against the 365 before (PreReason's calculation from EIA-930 daily figures), the AI hosting agreements Bitcoin miners announced in their own SEC current reports (megawatts, customer, term and contracted revenue, each naming its filing), and contracted hosting revenue per gross megawatt per year beside mining revenue per gross megawatt at the current hashprice, and four companies' capital expenditure for their newest quarter, each as its own company briefing serves it from its SEC filings, with the change on the year",
+      "href": "/api/context?briefing=cross.ai-compute",
+      "tier": "pro",
+      "metrics_count": 3,
+      "correlations_count": 0,
+      "features": {
+        "momentum": false,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "macro.rates",
+      "name": "Yield Curve and Breakeven Inflation",
+      "description": "Treasury par yield curve at every maturity, 1 month to 30 years, breakeven inflation at 5Y and 10Y, 5y5y forward inflation expectation, the 10Y-2Y spread, the 10Y-3M recession-indicator spread, Germany 10Y Bund as Eurozone long-end anchor for cross-region rate comparison, France 10Y and its spread over Germany (monthly averages from the ECB), and the latest FOMC statement: decision, vote, dissents and wording changes",
+      "href": "/api/context?briefing=macro.rates",
+      "tier": "pro",
+      "metrics_count": 22,
+      "correlations_count": 2,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.on-chain",
+      "name": "On-Chain Health",
+      "description": "Bitcoin network deep-dive: hash rate, difficulty, transaction count, transaction volume and active addresses, with their recent changes",
+      "href": "/api/context?briefing=btc.on-chain",
+      "tier": "basic",
+      "metrics_count": 8,
+      "correlations_count": 2,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "cross.breadth",
+      "name": "Market Breadth",
+      "description": "Breadth across S&P 500, Nasdaq, and small caps with Bitcoin correlation for each",
+      "href": "/api/context?briefing=cross.breadth",
+      "tier": "basic",
+      "metrics_count": 4,
+      "correlations_count": 3,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.miner-survival",
+      "name": "Miner Survival Index",
+      "description": "Miner profitability check: revenue per hash, production cost tiers, price against production cost, the hash ribbon and block pace, with percentile ranks in their own history",
+      "href": "/api/context?briefing=btc.miner-survival",
+      "tier": "basic",
+      "metrics_count": 9,
+      "correlations_count": 3,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.full",
+      "name": "Full Context",
+      "description": "Full Bitcoin context: price, macro overlay, momentum, percentiles, correlations, and a plain language summary written by fixed rules",
+      "href": "/api/context?briefing=btc.full",
+      "tier": "pro",
+      "metrics_count": 15,
+      "correlations_count": 8,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": true,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.factors",
+      "name": "Factor Attribution",
+      "description": "Bitcoin's price beside the factors a fixed set of rules reads with it: macro (Fed balance sheet, Treasury account, net liquidity, the dollar, the 30-year Treasury yield), markets (the S&P 500 fund and a long Treasury fund), on-chain (hash rate, volume), BTC perpetual futures positioning (funding rate and open interest), and 30-day at-the-money implied volatility",
+      "href": "/api/context?briefing=btc.factors",
+      "tier": "pro",
+      "derivatives": true,
+      "metrics_count": 17,
+      "correlations_count": 6,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": true,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "cross.regime",
+      "name": "Regime Check",
+      "description": "Market regime classification (expansion, contraction or transition) with divergence alerts, USDT dominance, central-bank policy spreads, and global central-bank balance-sheet overlay (BOJ total assets, Eurozone M3, Germany 10Y Bund)",
+      "href": "/api/context?briefing=cross.regime",
+      "tier": "pro",
+      "metrics_count": 24,
+      "correlations_count": 7,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": true,
+        "regime": true,
+        "divergence": true
+      }
+    },
+    {
+      "id": "fx.liquidity",
+      "name": "FX Liquidity",
+      "description": "Dollar and currency environment: the dollar, EUR/USD and USD/CNY with their recent changes, and their 30-day correlations with net liquidity and Bitcoin's price",
+      "href": "/api/context?briefing=fx.liquidity",
+      "tier": "pro",
+      "metrics_count": 5,
+      "correlations_count": 4,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.energy",
+      "name": "Energy Cost Index",
+      "description": "Mining economics: production cost model, natural gas input costs, and how energy input costs sit against their recent trend",
+      "href": "/api/context?briefing=btc.energy",
+      "tier": "pro",
+      "metrics_count": 10,
+      "correlations_count": 3,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": true,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.treasury",
+      "name": "Treasury Holdings Intelligence",
+      "description": "Corporate Bitcoin treasury holdings: changes in holdings from SEC filings and CoinGecko",
+      "href": "/api/context?briefing=btc.treasury",
+      "tier": "pro",
+      "metrics_count": 1,
+      "correlations_count": 0,
+      "features": {
+        "momentum": false,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.etf-flows",
+      "name": "BTC ETF Flows",
+      "description": "Spot BTC ETF flow read: net daily flows, aggregate AUM (sourced from per-issuer pages), and per-issuer breakdown across iShares Bitcoin Trust (IBIT), Fidelity Wise Origin Bitcoin Fund (FBTC), Grayscale Bitcoin Trust (GBTC), and other approved spot ETFs",
+      "href": "/api/context?briefing=btc.etf-flows",
+      "tier": "basic",
+      "metrics_count": 8,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "commodities.gold",
+      "name": "Commodities Gold",
+      "description": "GLD, a gold fund (its share price, not an ounce of gold), and gold's own price per troy ounce as the World Bank's monthly average, with what is said to move them: the 10 year real Treasury rate, the dollar fund (UUP), speculators' positions in COMEX gold futures (CFTC) and the gold miners' funds (GDX, GDXJ), each with its measured relationship to the fund. The Fed's balance sheet, the 10 year yield, the long Treasury fund (TLT) and the fund price ratios give context.",
+      "href": "/api/context?briefing=commodities.gold",
+      "tier": "basic",
+      "derivatives": true,
+      "metrics_count": 12,
+      "correlations_count": 4,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "commodities.silver",
+      "name": "Commodities Silver",
+      "description": "SLV, a silver fund (its share price, not an ounce of silver), and silver's own price per troy ounce as the World Bank's monthly average, with what is said to move them: the gold fund (GLD), the 10 year real Treasury rate, the dollar fund (UUP), speculators' positions in COMEX silver futures (CFTC), the copper fund (CPER) and the silver miners' fund (SIL), each with its measured relationship to the fund. The fund price ratios give context.",
+      "href": "/api/context?briefing=commodities.silver",
+      "tier": "basic",
+      "derivatives": true,
+      "metrics_count": 10,
+      "correlations_count": 5,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "commodities.copper",
+      "name": "Commodities Copper",
+      "description": "Copper through a copper futures fund (CPER), speculators' net position in COMEX copper futures (CFTC), the World Bank's monthly copper price, and the dollar and gold funds beside it, each with its measured relationship to the copper fund.",
+      "href": "/api/context?briefing=commodities.copper",
+      "tier": "basic",
+      "derivatives": true,
+      "metrics_count": 6,
+      "correlations_count": 2,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "commodities.wheat",
+      "name": "Commodities Wheat",
+      "description": "Wheat through a wheat futures fund (WEAT), speculators' net position in CBOT soft red winter wheat futures (CFTC), the World Bank's monthly US wheat price, and the dollar fund and the WTI spot price beside it, each with its measured relationship to the wheat fund.",
+      "href": "/api/context?briefing=commodities.wheat",
+      "tier": "basic",
+      "derivatives": true,
+      "metrics_count": 5,
+      "correlations_count": 2,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "commodities.energy-basket",
+      "name": "Energy Basket",
+      "description": "US oil and gas stocks against the five year norm, with what changed and what comes next: EIA weekly commercial crude stocks and Lower 48 gas storage, each placed against the same week in the prior five years; WTI, Brent and Henry Hub spot prices; the Brent to WTI spread; WTI 30 day realised volatility (computed from EIA spot prices, backward looking); the dates of the next EIA reports.",
+      "href": "/api/context?briefing=commodities.energy-basket",
+      "tier": "pro",
+      "metrics_count": 7,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "commodities.oil-producers",
+      "name": "Oil and Its Producers",
+      "description": "Crude oil and the covered USA companies EDGAR codes tie to it, side by side: US oil and gas stocks against the five year norm (EIA), WTI and Brent spot, then each integrated major, producer and refiner, and two oil field service companies coded as producers, with its share price, its change over 1, 3 and 12 months beside WTI over the same windows, and the 90 day correlation of its daily changes with WTI, with the id of its own briefing for its filed figures. Each group in order of stored market capitalisation; it describes, it does not rank.",
+      "href": "/api/context?briefing=commodities.oil-producers",
+      "tier": "pro",
+      "metrics_count": 6,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "commodities.gold-miners",
+      "name": "Gold and the Miners",
+      "description": "The gold fund GLD and the covered USA companies tied to gold by their own annual reports, side by side: the World Bank's monthly gold price as context, then each gold and silver miner and each royalty and streaming company with its share price, its change over 1, 3 and 12 months beside GLD over the same windows, the 90 day correlation of its daily changes with GLD, and the id of its own briefing for its filed figures. GLD is a fund's share price, not the gold price. Each group in order of stored market capitalisation; it describes, it does not rank.",
+      "href": "/api/context?briefing=commodities.gold-miners",
+      "tier": "pro",
+      "metrics_count": 2,
+      "correlations_count": 0,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "commodities.grains-agribusiness",
+      "name": "Grains and Agribusiness",
+      "description": "The wheat futures fund WEAT and the covered USA companies a review of their own annual reports ties to grain, side by side: the World Bank's monthly wheat price as context, then each grain merchandiser and processor, seed and crop nutrient company, farm equipment maker and farmland REIT with its share price, its change over 1, 3 and 12 months beside WEAT over the same windows, the 90 day correlation of its daily changes with WEAT, and the id of its own briefing for its filed figures. WEAT holds futures contracts and is not the wheat price. Each group in order of stored market capitalisation; it describes, it does not rank.",
+      "href": "/api/context?briefing=commodities.grains-agribusiness",
+      "tier": "pro",
+      "metrics_count": 2,
+      "correlations_count": 0,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "eth.context",
+      "name": "Ethereum Context",
+      "description": "Where Ether stands in the market: its price and its global 24 hour trading volume, with that volume's 30 day z score (CoinGecko); its distance from the 200 day average (PreReason's calculation on CoinGecko's daily closes); Lido's stETH APR, its 7 day average; the net positions of leveraged funds and asset managers in CME Ether futures, with open interest (the CFTC's weekly Commitments of Traders); and the funding rate on OKX's ETH perpetual (one venue, named as OKX's).",
+      "href": "/api/context?briefing=eth.context",
+      "tier": "basic",
+      "derivatives": true,
+      "metrics_count": 9,
+      "correlations_count": 2,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "bonds.context",
+      "name": "US Treasury Holders: Short Form",
+      "description": "Who holds Treasuries, in short: foreign investors' net purchases (Treasury's TIC), primary dealers' 13 week change in positions (the New York Fed) and speculators' 10 year note futures position (the CFTC), each against its own history; then the 10 year yield and three bond funds.",
+      "href": "/api/context?briefing=bonds.context",
+      "tier": "basic",
+      "derivatives": true,
+      "metrics_count": 4,
+      "correlations_count": 0,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "bonds.full",
+      "name": "US Treasury Holders",
+      "description": "Who holds Treasuries: foreign investors' net purchases (Treasury's TIC), primary dealers' 13 week change in positions (the New York Fed) and speculators' 10 year note futures position (the CFTC), each against its own history; the Fed's own Treasury holdings, debt held by the public and the largest foreign holders; what changed, what would change each label and the next reports; then the 10 year yield and three bond funds.",
+      "href": "/api/context?briefing=bonds.full",
+      "tier": "pro",
+      "derivatives": true,
+      "metrics_count": 4,
+      "correlations_count": 0,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "equities.company",
+      "name": "Company briefing",
+      "description": "A company briefing for one listed company: its latest reported figures, what changed, and how it is valued, each figure dated and sourced. In the USA the figures are read from each company's own filings with the US securities regulator, in Japan from each company's own filings with Japan's financial regulator, in Korea from each company's own filings with Korea's financial regulator, in India from each company's own published results, and in the UK, France, Austria, Belgium, Denmark, Finland, Iceland, Italy, Lithuania, the Netherlands, Slovenia and Slovakia from each company's own annual reports. Request as equities.company/<company>, where <company> is a USA ticker or CIK (NVDA), a Japanese securities code (7203), a Korean stock code (005930), an Indian company's ISIN (INE018A01030) or the LEI of a company filing in the UK or of a European company (2138002P5RNKC5W2JZ46).",
+      "href": "/api/context?briefing=equities.company",
+      "tier": "basic",
+      "metrics_count": 0,
+      "correlations_count": 0,
+      "features": {
+        "momentum": false,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    }
+  ]
+}

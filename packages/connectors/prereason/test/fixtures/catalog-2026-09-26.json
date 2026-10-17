@@ -1,0 +1,322 @@
+{
+  "usage": {
+    "fetch_one": "GET /api/context?briefing={id}",
+    "alias": "GET /api/briefings/{id}",
+    "auth": "Authorization: Bearer YOUR_API_KEY (or X-API-Key)",
+    "formats": "markdown (default) or ?format=json"
+  },
+  "briefing_counts": {
+    "free": 6,
+    "basic": 6,
+    "pro": 6,
+    "total": 18
+  },
+  "briefings": [
+    {
+      "id": "btc.quick-check",
+      "name": "Quick Check",
+      "description": "Quick directional read on Bitcoin price and net liquidity with their 30-day correlation",
+      "href": "/api/context?briefing=btc.quick-check",
+      "tier": "free",
+      "metrics_count": 2,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.context",
+      "name": "BTC Context",
+      "description": "Bitcoin price, mining health, and liquidity overview with 7-day and 30-day trend signals",
+      "href": "/api/context?briefing=btc.context",
+      "tier": "free",
+      "metrics_count": 5,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "macro.snapshot",
+      "name": "Macro Snapshot",
+      "description": "Fed balance sheet, M2 money supply, full Treasury yield curve (2Y/10Y/30Y), 10Y breakeven inflation, dollar strength (the UUP ETF), and composite net liquidity with trend direction across all four, plus global central-bank balance-sheet overlay (BOJ total assets, ECB total assets, Eurozone M3) for cross-region liquidity context",
+      "href": "/api/context?briefing=macro.snapshot",
+      "tier": "free",
+      "metrics_count": 15,
+      "correlations_count": 4,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "cross.correlations",
+      "name": "Correlation Check",
+      "description": "How Bitcoin correlates with equities, volatility, and the dollar across 9 metric pairs (30-day window)",
+      "href": "/api/context?briefing=cross.correlations",
+      "tier": "free",
+      "metrics_count": 8,
+      "correlations_count": 9,
+      "features": {
+        "momentum": false,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.pulse",
+      "name": "BTC Pulse",
+      "description": "Quick price action check - price, 24h change, dominance",
+      "href": "/api/context?briefing=btc.pulse",
+      "tier": "free",
+      "metrics_count": 3,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.grid-stress",
+      "name": "Grid Stress",
+      "description": "Mining network health - block production speed and upcoming difficulty adjustment forecast",
+      "href": "/api/context?briefing=btc.grid-stress",
+      "tier": "free",
+      "metrics_count": 4,
+      "correlations_count": 2,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.momentum",
+      "name": "BTC Momentum",
+      "description": "Multi-timeframe BTC momentum (7d/30d/90d) with percentile rankings, 200-day moving average distance, 24h volume, 30d volume Z-score (confirmation/non-confirmation overlay), hash-rate, dollar strength, net-liquidity backdrop, and BTC perp derivatives positioning (funding rate + open interest)",
+      "href": "/api/context?briefing=btc.momentum",
+      "tier": "basic",
+      "metrics_count": 12,
+      "correlations_count": 2,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "macro.liquidity",
+      "name": "Liquidity Momentum",
+      "description": "Fed balance, Treasury General Account, M2 money supply, composite net liquidity tracking with 7d/30d/90d trend changes and YTD percentile rankings, NY Fed System Open Market Account (SOMA) total holdings, and daily reverse-repo take-up as the collateral-cash imbalance signal",
+      "href": "/api/context?briefing=macro.liquidity",
+      "tier": "basic",
+      "metrics_count": 7,
+      "correlations_count": 4,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.on-chain",
+      "name": "On-Chain Health",
+      "description": "Bitcoin network deep-dive - hash rate, difficulty, transaction count, volume, and active addresses with trends",
+      "href": "/api/context?briefing=btc.on-chain",
+      "tier": "basic",
+      "metrics_count": 8,
+      "correlations_count": 2,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "cross.breadth",
+      "name": "Market Breadth",
+      "description": "Risk appetite across S&P 500, Nasdaq, and small caps with Bitcoin correlation for each",
+      "href": "/api/context?briefing=cross.breadth",
+      "tier": "basic",
+      "metrics_count": 4,
+      "correlations_count": 3,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.miner-survival",
+      "name": "Miner Survival Index",
+      "description": "Miner profitability check - revenue per hash, production cost tiers, and stress signals",
+      "href": "/api/context?briefing=btc.miner-survival",
+      "tier": "basic",
+      "metrics_count": 9,
+      "correlations_count": 3,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.full",
+      "name": "Full Context",
+      "description": "Full Bitcoin analysis - price, macro overlay, momentum, percentiles, correlations, and narrative text",
+      "href": "/api/context?briefing=btc.full",
+      "tier": "pro",
+      "metrics_count": 15,
+      "correlations_count": 8,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": true,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.factors",
+      "name": "Factor Attribution",
+      "description": "Rule-based \"why is Bitcoin moving\" with contributing macro factors (Fed balance, TGA, net liquidity, dollar), on-chain factors (hash rate, volume), BTC perp derivatives positioning (funding rate + open interest), and 30-day ATM implied volatility as a regime signal",
+      "href": "/api/context?briefing=btc.factors",
+      "tier": "pro",
+      "metrics_count": 17,
+      "correlations_count": 6,
+      "features": {
+        "momentum": true,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": true,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "cross.regime",
+      "name": "Regime Check",
+      "description": "Market regime classification (risk-on, risk-off, accumulation, distribution) with divergence alerts, stablecoin sentiment, central-bank policy spreads, and global central-bank balance-sheet overlay (BOJ total assets, Eurozone M3, Germany 10Y Bund)",
+      "href": "/api/context?briefing=cross.regime",
+      "tier": "pro",
+      "metrics_count": 24,
+      "correlations_count": 10,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": true,
+        "regime": true,
+        "divergence": true
+      }
+    },
+    {
+      "id": "fx.liquidity",
+      "name": "FX Liquidity",
+      "description": "Dollar and currency environment - EUR/USD, CNY/USD direction with net liquidity correlation",
+      "href": "/api/context?briefing=fx.liquidity",
+      "tier": "pro",
+      "metrics_count": 5,
+      "correlations_count": 4,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.energy",
+      "name": "Energy Cost Index",
+      "description": "Mining economics - production cost model, natural gas input costs, and energy margin pressure",
+      "href": "/api/context?briefing=btc.energy",
+      "tier": "pro",
+      "metrics_count": 10,
+      "correlations_count": 4,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": true,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.treasury",
+      "name": "Treasury Holdings Intelligence",
+      "description": "Corporate Bitcoin treasury holdings - accumulation trends from SEC filings and CoinGecko",
+      "href": "/api/context?briefing=btc.treasury",
+      "tier": "pro",
+      "metrics_count": 1,
+      "correlations_count": 0,
+      "features": {
+        "momentum": false,
+        "extended_momentum": false,
+        "percentiles": false,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    },
+    {
+      "id": "btc.etf-flows",
+      "name": "BTC ETF Flows",
+      "description": "Spot BTC ETF flow read: net daily flows, aggregate AUM (sourced from per-issuer pages), and per-issuer breakdown across iShares Bitcoin Trust (IBIT), Fidelity Wise Origin Bitcoin Fund (FBTC), Grayscale Bitcoin Trust (GBTC), and other approved spot ETFs",
+      "href": "/api/context?briefing=btc.etf-flows",
+      "tier": "basic",
+      "metrics_count": 8,
+      "correlations_count": 1,
+      "features": {
+        "momentum": true,
+        "extended_momentum": true,
+        "percentiles": true,
+        "causal_reasoning": false,
+        "regime": false,
+        "divergence": false
+      }
+    }
+  ]
+}

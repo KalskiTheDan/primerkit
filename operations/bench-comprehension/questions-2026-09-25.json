@@ -1,0 +1,1071 @@
+{
+ "source": "PreReason comprehension benchmark, questions of 2026-09-25",
+ "schema": "comprehension-questions/1",
+ "briefings": [
+  {
+   "briefing": "btc.pulse",
+   "reference_time": "2026-09-25T09:05:46.112Z",
+   "questions": [
+    {
+     "id": "q01",
+     "type": "latest_value",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the latest value of Bitcoin Price (bitcoin-price)?",
+     "unit": "US dollars",
+     "options": null,
+     "about": [
+      "bitcoin-price"
+     ],
+     "key": {
+      "answer": 84512.32,
+      "tolerance": {
+       "abs": 0.005005,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q02",
+     "type": "latest_value",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the latest value of BTC Dominance (bitcoin-dominance)?",
+     "unit": "percent",
+     "options": null,
+     "about": [
+      "bitcoin-dominance"
+     ],
+     "key": {
+      "answer": 58.49041193,
+      "tolerance": {
+       "abs": 0.05005,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q03",
+     "type": "latest_date",
+     "kind": "date",
+     "group": "core",
+     "text": "On what UTC date was the latest reading of 24h Change (bitcoin-change-24h) taken?",
+     "unit": null,
+     "options": null,
+     "about": [
+      "bitcoin-change-24h"
+     ],
+     "key": {
+      "answer": "2026-09-25",
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q04",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 7 day change of Bitcoin Price (bitcoin-price), as a relative percent change, from its reading dated 2026-09-17 (the reading nearest to 7 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "bitcoin-price"
+     ],
+     "key": {
+      "answer": 10.619682275904434,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q05",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 30 day change of 24h Change (bitcoin-change-24h), as an absolute change in percentage points, from its reading dated 2026-08-25 (the reading nearest to 30 days before the reference time) to its latest reading?",
+     "unit": "percentage points",
+     "options": null,
+     "about": [
+      "bitcoin-change-24h"
+     ],
+     "key": {
+      "answer": 1.60617605,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q06",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 90 day change of BTC Dominance (bitcoin-dominance), as an absolute change in percentage points, from its reading dated 2026-06-27 (the reading nearest to 90 days before the reference time) to its latest reading?",
+     "unit": "percentage points",
+     "options": null,
+     "about": [
+      "bitcoin-dominance"
+     ],
+     "key": {
+      "answer": 2.6708223999999987,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q07",
+     "type": "threshold",
+     "kind": "yesno",
+     "group": "core",
+     "text": "Is the latest value of 24h Change (bitcoin-change-24h) above 1, measured in percent?",
+     "unit": "percent",
+     "options": null,
+     "about": [
+      "bitcoin-change-24h"
+     ],
+     "key": {
+      "answer": "yes",
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q08",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 90 day change of Bitcoin Price (bitcoin-price), as a relative percent change, from its reading dated 2026-06-27 (the reading nearest to 90 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "bitcoin-price"
+     ],
+     "key": {
+      "answer": 40.966639978649596,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q09",
+     "type": "stale_count",
+     "kind": "integer",
+     "group": "core",
+     "text": "How many of this briefing's 3 metrics either have no reading at all or have a latest reading more than 7 days older than the reference time?",
+     "unit": null,
+     "options": null,
+     "about": [
+      "bitcoin-price",
+      "bitcoin-change-24h",
+      "bitcoin-dominance"
+     ],
+     "key": {
+      "answer": 0,
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q10",
+     "type": "correlation",
+     "kind": "number",
+     "group": "derived",
+     "text": "Using the 30 UTC dates from 2026-08-27 to 2026-09-25 on which both have a daily reading, what is the Pearson correlation between the day to day percent changes of Bitcoin Price (bitcoin-price) and BTC Dominance (bitcoin-dominance)?",
+     "unit": "correlation coefficient",
+     "options": null,
+     "about": [
+      "bitcoin-price",
+      "bitcoin-dominance"
+     ],
+     "key": {
+      "answer": 0.25545096364721326,
+      "tolerance": {
+       "abs": 0.05,
+       "rel": 0
+      },
+      "accept": null
+     }
+    }
+   ]
+  },
+  {
+   "briefing": "btc.context",
+   "reference_time": "2026-09-25T09:05:40.417Z",
+   "questions": [
+    {
+     "id": "q01",
+     "type": "latest_value",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the latest value of Bitcoin Hash Rate (bitcoin-hash-rate)?",
+     "unit": "exahashes per second (EH/s)",
+     "options": null,
+     "about": [
+      "bitcoin-hash-rate"
+     ],
+     "key": {
+      "answer": 933.4577340325555,
+      "tolerance": {
+       "abs": 0.005005,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q02",
+     "type": "latest_value",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the latest value of Bitcoin Difficulty (bitcoin-difficulty)?",
+     "unit": "trillions",
+     "options": null,
+     "about": [
+      "bitcoin-difficulty"
+     ],
+     "key": {
+      "answer": 132.7570734494875,
+      "tolerance": {
+       "abs": 0.05005,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q03",
+     "type": "latest_date",
+     "kind": "date",
+     "group": "core",
+     "text": "On what UTC date was the latest reading of Net Liquidity (net-liquidity) taken?",
+     "unit": null,
+     "options": null,
+     "about": [
+      "net-liquidity"
+     ],
+     "key": {
+      "answer": "2026-09-25",
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q04",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 7 day change of Bitcoin Price (bitcoin-price), as a relative percent change, from its reading dated 2026-09-17 (the reading nearest to 7 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "bitcoin-price"
+     ],
+     "key": {
+      "answer": 10.619682275904434,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q05",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 30 day change of Net Liquidity (net-liquidity), as a relative percent change, from its reading dated 2026-08-25 (the reading nearest to 30 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "net-liquidity"
+     ],
+     "key": {
+      "answer": -0.3745371379160665,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q06",
+     "type": "compare",
+     "kind": "choice",
+     "group": "core",
+     "text": "Which of these has the largest 7 day relative percent change (the most positive number)?",
+     "unit": null,
+     "options": [
+      "Bitcoin Hash Rate (bitcoin-hash-rate)",
+      "Net Liquidity (net-liquidity)",
+      "Bitcoin Price (bitcoin-price)",
+      "Bitcoin Difficulty (bitcoin-difficulty)"
+     ],
+     "about": [
+      "bitcoin-hash-rate",
+      "net-liquidity",
+      "bitcoin-price",
+      "bitcoin-difficulty"
+     ],
+     "key": {
+      "answer": "Bitcoin Price (bitcoin-price)",
+      "tolerance": null,
+      "accept": [
+       "Bitcoin Price (bitcoin-price)",
+       "bitcoin-price",
+       "Bitcoin Price"
+      ]
+     }
+    },
+    {
+     "id": "q07",
+     "type": "threshold",
+     "kind": "yesno",
+     "group": "core",
+     "text": "Is the latest value of Bitcoin Price (bitcoin-price) above 82000, measured in US dollars?",
+     "unit": "US dollars",
+     "options": null,
+     "about": [
+      "bitcoin-price"
+     ],
+     "key": {
+      "answer": "yes",
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q08",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 90 day change of Bitcoin Hash Rate (bitcoin-hash-rate), as a relative percent change, from its reading dated 2026-06-27 (the reading nearest to 90 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "bitcoin-hash-rate"
+     ],
+     "key": {
+      "answer": -3.8400656640154027,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q09",
+     "type": "stale_count",
+     "kind": "integer",
+     "group": "core",
+     "text": "How many of this briefing's 5 metrics either have no reading at all or have a latest reading more than 7 days older than the reference time?",
+     "unit": null,
+     "options": null,
+     "about": [
+      "bitcoin-price",
+      "bitcoin-hash-rate",
+      "bitcoin-difficulty",
+      "net-liquidity",
+      "hash-ribbon"
+     ],
+     "key": {
+      "answer": 0,
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q10",
+     "type": "correlation",
+     "kind": "number",
+     "group": "derived",
+     "text": "Using the 31 UTC dates from 2026-08-26 to 2026-09-25 on which both have a daily reading, what is the Pearson correlation between the day to day percent changes of Bitcoin Price (bitcoin-price) and Net Liquidity (net-liquidity)?",
+     "unit": "correlation coefficient",
+     "options": null,
+     "about": [
+      "bitcoin-price",
+      "net-liquidity"
+     ],
+     "key": {
+      "answer": -0.16121089655480708,
+      "tolerance": {
+       "abs": 0.05,
+       "rel": 0
+      },
+      "accept": null
+     }
+    }
+   ]
+  },
+  {
+   "briefing": "macro.snapshot",
+   "reference_time": "2026-09-25T09:05:50.295Z",
+   "questions": [
+    {
+     "id": "q01",
+     "type": "latest_value",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the latest value of Treasury 30Y (treasury-30y)?",
+     "unit": "percent",
+     "options": null,
+     "about": [
+      "treasury-30y"
+     ],
+     "key": {
+      "answer": 5.4,
+      "tolerance": {
+       "abs": 0.005005,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q02",
+     "type": "latest_value",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the latest value of 10Y Treasury Yield (treasury-10y)?",
+     "unit": "percent",
+     "options": null,
+     "about": [
+      "treasury-10y"
+     ],
+     "key": {
+      "answer": 5.11,
+      "tolerance": {
+       "abs": 0.005005,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q03",
+     "type": "latest_date",
+     "kind": "date",
+     "group": "core",
+     "text": "On what UTC date was the latest reading of Yield Curve Spread (yield-curve) taken?",
+     "unit": null,
+     "options": null,
+     "about": [
+      "yield-curve"
+     ],
+     "key": {
+      "answer": "2026-09-24",
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q04",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 7 day change of Net Liquidity (net-liquidity), as a relative percent change, from its reading dated 2026-09-17 (the reading nearest to 7 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "net-liquidity"
+     ],
+     "key": {
+      "answer": -1.691086620355194,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q05",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 30 day change of Breakeven 10Y (breakeven-10y), as a relative percent change, from its reading dated 2026-08-26 (the reading nearest to 30 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "breakeven-10y"
+     ],
+     "key": {
+      "answer": 0.43103448275863065,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q06",
+     "type": "compare",
+     "kind": "choice",
+     "group": "core",
+     "text": "Which of these has the lowest latest value?",
+     "unit": null,
+     "options": [
+      "Breakeven 10Y (breakeven-10y)",
+      "Treasury 2Y (treasury-2y)",
+      "Treasury 30Y (treasury-30y)",
+      "10Y Treasury Yield (treasury-10y)"
+     ],
+     "about": [
+      "breakeven-10y",
+      "treasury-2y",
+      "treasury-30y",
+      "treasury-10y"
+     ],
+     "key": {
+      "answer": "Breakeven 10Y (breakeven-10y)",
+      "tolerance": null,
+      "accept": [
+       "Breakeven 10Y (breakeven-10y)",
+       "breakeven-10y",
+       "Breakeven 10Y"
+      ]
+     }
+    },
+    {
+     "id": "q07",
+     "type": "threshold",
+     "kind": "yesno",
+     "group": "core",
+     "text": "Is the latest value of T10y3m Spread (t10y3m-spread) above 0.89, measured in percent?",
+     "unit": "percent",
+     "options": null,
+     "about": [
+      "t10y3m-spread"
+     ],
+     "key": {
+      "answer": "yes",
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q08",
+     "type": "oldest",
+     "kind": "choice",
+     "group": "core",
+     "text": "Which of these has the oldest latest reading?",
+     "unit": null,
+     "options": [
+      "ECB Total Assets (ecb-balance)",
+      "EU M3 (eu-m3)",
+      "10Y Treasury Yield (treasury-10y)",
+      "Breakeven 10Y (breakeven-10y)"
+     ],
+     "about": [
+      "ecb-balance",
+      "eu-m3",
+      "treasury-10y",
+      "breakeven-10y"
+     ],
+     "key": {
+      "answer": "EU M3 (eu-m3)",
+      "tolerance": null,
+      "accept": [
+       "EU M3 (eu-m3)",
+       "eu-m3",
+       "EU M3"
+      ]
+     }
+    },
+    {
+     "id": "q09",
+     "type": "stale_count",
+     "kind": "integer",
+     "group": "core",
+     "text": "How many of this briefing's 15 metrics either have no reading at all or have a latest reading more than 14 days older than the reference time?",
+     "unit": null,
+     "options": null,
+     "about": [
+      "fed-balance",
+      "tga",
+      "net-liquidity",
+      "m2-supply",
+      "treasury-2y",
+      "treasury-10y",
+      "treasury-30y",
+      "yield-curve",
+      "dxy",
+      "breakeven-10y",
+      "boj-balance",
+      "ecb-balance",
+      "eu-m3",
+      "us-debt-total",
+      "t10y3m-spread"
+     ],
+     "key": {
+      "answer": 3,
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q10",
+     "type": "correlation",
+     "kind": "number",
+     "group": "derived",
+     "text": "Using the 21 UTC dates from 2026-08-26 to 2026-09-24 on which both have a daily reading, what is the Pearson correlation between the day to day percent changes of Dollar Strength (UUP) (dxy) and Net Liquidity (net-liquidity)?",
+     "unit": "correlation coefficient",
+     "options": null,
+     "about": [
+      "dxy",
+      "net-liquidity"
+     ],
+     "key": {
+      "answer": 0.058534883758554715,
+      "tolerance": {
+       "abs": 0.05,
+       "rel": 0
+      },
+      "accept": null
+     }
+    }
+   ]
+  },
+  {
+   "briefing": "cross.correlations",
+   "reference_time": "2026-09-25T09:05:47.960Z",
+   "questions": [
+    {
+     "id": "q01",
+     "type": "latest_value",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the latest value of Dollar Strength (UUP) (dxy)?",
+     "unit": "US dollars",
+     "options": null,
+     "about": [
+      "dxy"
+     ],
+     "key": {
+      "answer": 28.72,
+      "tolerance": {
+       "abs": 0.005005,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q02",
+     "type": "latest_value",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the latest value of Bitcoin Price (bitcoin-price)?",
+     "unit": "US dollars",
+     "options": null,
+     "about": [
+      "bitcoin-price"
+     ],
+     "key": {
+      "answer": 84512.32,
+      "tolerance": {
+       "abs": 0.005005,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q03",
+     "type": "latest_date",
+     "kind": "date",
+     "group": "core",
+     "text": "On what UTC date was the latest reading of Volatility (VXX) (vxx) taken?",
+     "unit": null,
+     "options": null,
+     "about": [
+      "vxx"
+     ],
+     "key": {
+      "answer": "2026-09-24",
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q04",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 7 day change of Net Liquidity (net-liquidity), as a relative percent change, from its reading dated 2026-09-17 (the reading nearest to 7 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "net-liquidity"
+     ],
+     "key": {
+      "answer": -1.691086620355194,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q05",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 30 day change of EUR/USD (eur-usd), as a relative percent change, from its reading dated 2026-08-26 (the reading nearest to 30 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "eur-usd"
+     ],
+     "key": {
+      "answer": -1.6050124452836614,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q06",
+     "type": "compare",
+     "kind": "choice",
+     "group": "core",
+     "text": "Which of these has the highest latest value?",
+     "unit": null,
+     "options": [
+      "Volatility (VXX) (vxx)",
+      "Dollar Strength (UUP) (dxy)",
+      "S&P 500 (SPY) (spy)",
+      "Nasdaq 100 (QQQ) (qqq)"
+     ],
+     "about": [
+      "vxx",
+      "dxy",
+      "spy",
+      "qqq"
+     ],
+     "key": {
+      "answer": "S&P 500 (SPY) (spy)",
+      "tolerance": null,
+      "accept": [
+       "S&P 500 (SPY) (spy)",
+       "spy",
+       "S&P 500 (SPY)"
+      ]
+     }
+    },
+    {
+     "id": "q07",
+     "type": "threshold",
+     "kind": "yesno",
+     "group": "core",
+     "text": "Is the latest value of Nasdaq 100 (QQQ) (qqq) above 680, measured in US dollars?",
+     "unit": "US dollars",
+     "options": null,
+     "about": [
+      "qqq"
+     ],
+     "key": {
+      "answer": "yes",
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q08",
+     "type": "oldest",
+     "kind": "choice",
+     "group": "core",
+     "text": "Which of these has the oldest latest reading?",
+     "unit": null,
+     "options": [
+      "EUR/USD (eur-usd)",
+      "Hash Ribbon (hash-ribbon)",
+      "Bitcoin Price (bitcoin-price)",
+      "Dollar Strength (UUP) (dxy)"
+     ],
+     "about": [
+      "eur-usd",
+      "hash-ribbon",
+      "bitcoin-price",
+      "dxy"
+     ],
+     "key": {
+      "answer": "EUR/USD (eur-usd)",
+      "tolerance": null,
+      "accept": [
+       "EUR/USD (eur-usd)",
+       "eur-usd",
+       "EUR/USD"
+      ]
+     }
+    },
+    {
+     "id": "q09",
+     "type": "stale_count",
+     "kind": "integer",
+     "group": "core",
+     "text": "How many of this briefing's 8 metrics either have no reading at all or have a latest reading more than 14 days older than the reference time?",
+     "unit": null,
+     "options": null,
+     "about": [
+      "bitcoin-price",
+      "net-liquidity",
+      "dxy",
+      "spy",
+      "qqq",
+      "vxx",
+      "eur-usd",
+      "hash-ribbon"
+     ],
+     "key": {
+      "answer": 0,
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q10",
+     "type": "correlation",
+     "kind": "number",
+     "group": "derived",
+     "text": "Using the 30 UTC dates from 2026-08-27 to 2026-09-25 on which both have a daily reading, what is the Pearson correlation between the day to day percent changes of Hash Ribbon (hash-ribbon) and Bitcoin Price (bitcoin-price)?",
+     "unit": "correlation coefficient",
+     "options": null,
+     "about": [
+      "hash-ribbon",
+      "bitcoin-price"
+     ],
+     "key": {
+      "answer": 0.14161343006059632,
+      "tolerance": {
+       "abs": 0.05,
+       "rel": 0
+      },
+      "accept": null
+     }
+    }
+   ]
+  },
+  {
+   "briefing": "btc.grid-stress",
+   "reference_time": "2026-09-25T09:05:44.091Z",
+   "questions": [
+    {
+     "id": "q01",
+     "type": "latest_value",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the latest value of Bitcoin Hash Rate (bitcoin-hash-rate)?",
+     "unit": "exahashes per second (EH/s)",
+     "options": null,
+     "about": [
+      "bitcoin-hash-rate"
+     ],
+     "key": {
+      "answer": 933.4577340325555,
+      "tolerance": {
+       "abs": 0.005005,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q02",
+     "type": "latest_value",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the latest value of Bitcoin Difficulty (bitcoin-difficulty)?",
+     "unit": "trillions",
+     "options": null,
+     "about": [
+      "bitcoin-difficulty"
+     ],
+     "key": {
+      "answer": 132.7570734494875,
+      "tolerance": {
+       "abs": 0.05005,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q03",
+     "type": "latest_date",
+     "kind": "date",
+     "group": "core",
+     "text": "On what UTC date was the latest reading of Hash Ribbon (hash-ribbon) taken?",
+     "unit": null,
+     "options": null,
+     "about": [
+      "hash-ribbon"
+     ],
+     "key": {
+      "answer": "2026-09-25",
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q04",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 7 day change of Epoch Pace (epoch-pace), as an absolute change in percentage points, from its reading dated 2026-09-17 (the reading nearest to 7 days before the reference time) to its latest reading?",
+     "unit": "percentage points",
+     "options": null,
+     "about": [
+      "epoch-pace"
+     ],
+     "key": {
+      "answer": 6.771,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q05",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 30 day change of Bitcoin Hash Rate (bitcoin-hash-rate), as a relative percent change, from its reading dated 2026-08-26 (the reading nearest to 30 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "bitcoin-hash-rate"
+     ],
+     "key": {
+      "answer": 4.83613652076127,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q06",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 90 day change of Bitcoin Hash Rate (bitcoin-hash-rate), as a relative percent change, from its reading dated 2026-06-27 (the reading nearest to 90 days before the reference time) to its latest reading?",
+     "unit": "percent (relative change)",
+     "options": null,
+     "about": [
+      "bitcoin-hash-rate"
+     ],
+     "key": {
+      "answer": -3.8400656640154027,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q07",
+     "type": "threshold",
+     "kind": "yesno",
+     "group": "core",
+     "text": "Is the latest value of Bitcoin Difficulty (bitcoin-difficulty) above 140, measured in trillions?",
+     "unit": "trillions",
+     "options": null,
+     "about": [
+      "bitcoin-difficulty"
+     ],
+     "key": {
+      "answer": "no",
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q08",
+     "type": "change",
+     "kind": "number",
+     "group": "core",
+     "text": "What is the 90 day change of Epoch Pace (epoch-pace), as an absolute change in percentage points, from its reading dated 2026-06-27 (the reading nearest to 90 days before the reference time) to its latest reading?",
+     "unit": "percentage points",
+     "options": null,
+     "about": [
+      "epoch-pace"
+     ],
+     "key": {
+      "answer": 16.4865,
+      "tolerance": {
+       "abs": 0.1,
+       "rel": 0.01
+      },
+      "accept": null
+     }
+    },
+    {
+     "id": "q09",
+     "type": "stale_count",
+     "kind": "integer",
+     "group": "core",
+     "text": "How many of this briefing's 4 metrics either have no reading at all or have a latest reading more than 7 days older than the reference time?",
+     "unit": null,
+     "options": null,
+     "about": [
+      "bitcoin-difficulty",
+      "bitcoin-hash-rate",
+      "epoch-pace",
+      "hash-ribbon"
+     ],
+     "key": {
+      "answer": 0,
+      "tolerance": null,
+      "accept": null
+     }
+    },
+    {
+     "id": "q10",
+     "type": "correlation",
+     "kind": "number",
+     "group": "derived",
+     "text": "Using the 30 UTC dates from 2026-08-27 to 2026-09-25 on which both have a daily reading, what is the Pearson correlation between the day to day percent changes of Hash Ribbon (hash-ribbon) and Bitcoin Hash Rate (bitcoin-hash-rate)?",
+     "unit": "correlation coefficient",
+     "options": null,
+     "about": [
+      "hash-ribbon",
+      "bitcoin-hash-rate"
+     ],
+     "key": {
+      "answer": 0.06616474136691923,
+      "tolerance": {
+       "abs": 0.05,
+       "rel": 0
+      },
+      "accept": null
+     }
+    }
+   ]
+  }
+ ]
+}

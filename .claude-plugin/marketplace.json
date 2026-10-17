@@ -1,0 +1,14 @@
+{
+  "name": "primerkit",
+  "description": "primerkit for Claude Code: PreReason's market briefings asked on your own model, every claim cited and checked.",
+  "owner": {
+    "name": "primerkit"
+  },
+  "plugins": [
+    {
+      "name": "primerkit",
+      "source": "./hosts/claude-code-plugin",
+      "description": "Ask PreReason's market briefings with every claim cited to a numbered line and checked on this machine, and read what changed since the last digest."
+    }
+  ]
+}

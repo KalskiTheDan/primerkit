@@ -1,0 +1,48 @@
+{
+  "id": "msg_fixture_web_search",
+  "type": "message",
+  "role": "assistant",
+  "model": "claude-sonnet-5-5",
+  "content": [
+    { "type": "thinking", "thinking": "", "signature": "fixture" },
+    { "type": "server_tool_use", "id": "srvtoolu_fixture_1", "name": "web_search", "input": { "query": "net liquidity Fed balance sheet October 2026" } },
+    {
+      "type": "web_search_tool_result",
+      "tool_use_id": "srvtoolu_fixture_1",
+      "content": [
+        { "type": "web_search_result", "url": "https://sample-central-bank.example/releases/weekly-balance-sheet/", "title": "Weekly balance sheet - Sample Central Bank", "page_age": "October 9, 2026", "encrypted_content": "fixture-not-a-real-body-1" },
+        { "type": "web_search_result", "url": "https://sample-statistics.example/series/total-assets", "title": "Total assets (sample series)", "page_age": "October 8, 2026", "encrypted_content": "fixture-not-a-real-body-2" },
+        { "type": "web_search_result", "url": "https://sample-reserve-desk.example/operations/reverse-repo", "title": "Reverse repo operations (sample)", "page_age": null, "encrypted_content": "fixture-not-a-real-body-3" }
+      ]
+    },
+    { "type": "server_tool_use", "id": "srvtoolu_fixture_2", "name": "web_search", "input": { "query": "Treasury General Account balance October 2026" } },
+    {
+      "type": "web_search_tool_result",
+      "tool_use_id": "srvtoolu_fixture_2",
+      "content": [
+        { "type": "web_search_result", "url": "https://example-treasury.example/datasets/daily-statement/", "title": "Daily statement - Example Treasury", "page_age": "October 10, 2026", "encrypted_content": "fixture-not-a-real-body-4" },
+        { "type": "web_search_result", "url": "https://sample-statistics.example/series/total-assets", "title": "Total assets (sample series)", "page_age": "October 8, 2026", "encrypted_content": "fixture-not-a-real-body-2" }
+      ]
+    },
+    { "type": "server_tool_use", "id": "srvtoolu_fixture_3", "name": "web_search", "input": { "query": "net liquidity this week" } },
+    { "type": "web_search_tool_result", "tool_use_id": "srvtoolu_fixture_3", "content": { "type": "web_search_tool_result_error", "error_code": "too_many_requests" } },
+    { "type": "text", "text": "Net liquidity has been drifting lower. " },
+    {
+      "type": "text",
+      "text": "The central bank's balance sheet stood at $6.61 trillion in the week to October 8",
+      "citations": [
+        { "type": "web_search_result_location", "url": "https://sample-central-bank.example/releases/weekly-balance-sheet/", "title": "Weekly balance sheet - Sample Central Bank", "cited_text": "Total assets 6,612,345", "encrypted_index": "fixture-index-1" }
+      ]
+    },
+    {
+      "type": "text",
+      "text": ", while the government's cash balance rose to $842 billion",
+      "citations": [
+        { "type": "web_search_result_location", "url": "https://example-treasury.example/datasets/daily-statement/", "title": "Daily statement - Example Treasury", "cited_text": "Closing balance 842,113", "encrypted_index": "fixture-index-2" }
+      ]
+    },
+    { "type": "text", "text": ".\n\nReverse repo use stayed near zero, so it added little either way." }
+  ],
+  "stop_reason": "end_turn",
+  "usage": { "input_tokens": 7412, "output_tokens": 388, "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0, "server_tool_use": { "web_search_requests": 3 } }
+}

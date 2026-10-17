@@ -1,0 +1,40 @@
+{
+  "about": { "company": "Fictional Group Corp", "ticker": "FXMP", "market": "us", "briefing": "equities.company/fxmp" },
+  "window": { "since": "2026-09-28", "until": "2026-10-09", "basis": "each record by the date it shows" },
+  "records": [
+    {
+      "mark": "FILED",
+      "when": "Thursday 2026-10-08, USA (registry filing date, Eastern)",
+      "date": "2026-10-08",
+      "time": null,
+      "who": "Fictional Group Corp",
+      "line": "8-K item 7.01, Regulation FD disclosure",
+      "source": "Sample Filings Registry 8-K items (fictional companies, for tests)",
+      "link": "https://sample-filings.example/data/0000000000/000000000026000052/0000000000-26-000052-index.htm",
+      "briefing": "equities.company/fxmp"
+    },
+    {
+      "mark": "FILED",
+      "when": "Thursday 2026-10-01, USA (registry filing date, Eastern)",
+      "date": "2026-10-01",
+      "time": null,
+      "who": "Fictional Group Corp",
+      "line": "8-K item 9.01, financial statements and exhibits",
+      "source": "Sample Filings Registry 8-K items (fictional companies, for tests)",
+      "link": "https://sample-filings.example/data/0000000000/000000000026000047/0000000000-26-000047-index.htm",
+      "briefing": "equities.company/fxmp"
+    },
+    {
+      "mark": "FILED",
+      "when": "Thursday 2026-10-01, USA (registry filing date, Eastern)",
+      "date": "2026-10-01",
+      "time": null,
+      "who": "Fictional Group Corp",
+      "line": "8-K item 2.02, results of operations",
+      "source": "Sample Filings Registry 8-K items (fictional companies, for tests)",
+      "link": "https://sample-filings.example/data/0000000000/000000000026000047/0000000000-26-000047-index.htm",
+      "briefing": "equities.company/fxmp"
+    }
+  ],
+  "coverage": "Read: Sample Filings Registry 8-K items (fictional companies, for tests), from 2026-09-28 to 2026-10-09 (each record by the date it shows)."
+}

@@ -1,0 +1,22 @@
+{
+  "name": "primerkit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "bin": {
+    "primerkit": "./bin/primerkit.js"
+  },
+  "dependencies": {
+    "@primerkit/brokers": "0.1.0",
+    "@primerkit/connector-prereason": "0.1.0",
+    "@primerkit/core": "0.1.0",
+    "@primerkit/mcp-server": "0.1.0",
+    "@primerkit/models": "0.1.0",
+    "@primerkit/session": "0.1.0",
+    "@primerkit/ui": "0.1.0",
+    "tsx": "^4.23.15"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "primerkit-workspace",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "workspaces": [
+    "packages/ui",
+    "packages/core",
+    "packages/connectors/prereason",
+    "packages/models",
+    "packages/session",
+    "packages/brokers",
+    "packages/mcp-server",
+    "packages/cli"
+  ],
+  "scripts": {
+    "start": "tsx packages/cli/src/main.ts",
+    "demo": "tsx packages/cli/src/main.ts --demo",
+    "walk": "tsx packages/cli/src/main.ts --demo --walk",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "node scripts/build.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "gallery": "tsx scripts/gallery.ts",
+    "storyboard": "tsx scripts/storyboard.ts",
+    "replay": "tsx scripts/replay.ts",
+    "perf": "tsx scripts/perf.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "esbuild": "^0.28.2",
+    "gifenc": "1.0.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2"
+  }
+}

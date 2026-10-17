@@ -1,0 +1,400 @@
+{
+  "briefing_used": "cross.correlations",
+  "briefing_metadata": {
+    "name": "Correlation Check",
+    "description": "How Bitcoin correlates with equities, volatility, and the dollar across 9 metric pairs (30-day window)",
+    "tier": "free",
+    "metrics_count": 8,
+    "correlations_count": 9,
+    "correlations_window_days": 30,
+    "data_access": "All available data",
+    "glossary": {
+      "uri": "/api/context/glossary",
+      "version": "0c4345b145bd"
+    },
+    "earliest_usable_date": "1999-04-01"
+  },
+  "date": "2026-09-25",
+  "metrics": {
+    "bitcoin-price": {
+      "name": "bitcoin-price",
+      "value_formatted": "$84,512.32",
+      "timestamp": "2026-09-25T09:04:40.958903+00:00",
+      "signal": "bullish",
+      "regulatory_mode": "signal",
+      "confidence": 81,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 64,
+        "trend_consistency": 100,
+        "percentile_score": 77,
+        "data_quality": 100
+      },
+      "context": "BTC at $84,512.32, up 10.6% over 7d. Accelerating upward - recent gains exceeding longer-term pace",
+      "trend": {
+        "direction": "rising",
+        "change_1d": 0.14,
+        "change_1d_available": true,
+        "change_7d": 10.62,
+        "change_30d": 7.58,
+        "change_90d": 40.97,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "accelerating",
+        "percentile": 83,
+        "percentile_label": "high"
+      }
+    },
+    "net-liquidity": {
+      "name": "net-liquidity",
+      "value_formatted": "$5.77T",
+      "timestamp": "2026-09-25T09:05:24.267+00:00",
+      "signal": "bearish",
+      "regulatory_mode": "signal",
+      "confidence": 76,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 20,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "Net liquidity stable at $5.77T. Consolidating.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": -1.69,
+        "change_1d_available": true,
+        "change_7d": -1.69,
+        "change_30d": -0.37,
+        "change_90d": -0.7,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 3,
+        "percentile_label": "unusually slow or contracting"
+      }
+    },
+    "dxy": {
+      "name": "dxy",
+      "value_formatted": "28.72",
+      "timestamp": "2026-09-24T19:42:12+00:00",
+      "signal": "below-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 79,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 60,
+        "percentile_score": 53,
+        "data_quality": 100
+      },
+      "context": "Dollar strength (UUP) stable at 28.72. Consolidating: neutral dollar backdrop.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0,
+        "change_1d_available": true,
+        "change_7d": 1.13,
+        "change_30d": 2.5,
+        "change_90d": 1.2,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 76,
+        "percentile_label": "high"
+      }
+    },
+    "spy": {
+      "name": "spy",
+      "value_formatted": "$767.67",
+      "timestamp": "2026-09-24T19:44:41+00:00",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 76,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 20,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "S&P 500 (SPY) stable at $767.67. Consolidating: neutral equity backdrop.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0,
+        "change_1d_available": true,
+        "change_7d": 0.78,
+        "change_30d": 0.13,
+        "change_90d": 3.59,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 98,
+        "percentile_label": "extremely high"
+      }
+    },
+    "qqq": {
+      "name": "qqq",
+      "value_formatted": "$741.03",
+      "timestamp": "2026-09-24T19:44:40+00:00",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 90,
+      "confidence_label": "Very High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 100,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "Nasdaq 100 (QQQ) at $741.03, +2.7% over 7d, rising. Accelerating tech momentum: risk appetite expanding.",
+      "trend": {
+        "direction": "rising",
+        "change_1d": 0,
+        "change_1d_available": true,
+        "change_7d": 2.71,
+        "change_30d": 4.12,
+        "change_90d": 2.34,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "accelerating",
+        "percentile": 99,
+        "percentile_label": "extremely high"
+      }
+    },
+    "vxx": {
+      "name": "vxx",
+      "value_formatted": "$17.54",
+      "timestamp": "2026-09-24T19:44:33+00:00",
+      "signal": "below-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 88,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 60,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "iPath Series B S&P 500 VIX Short-Term Futures ETN (VXX) at $17.54, stable. Consolidating: balanced risk sentiment. Note: VXX exhibits structural decay from VIX-futures contango over long holding periods.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0,
+        "change_1d_available": true,
+        "change_7d": -1.29,
+        "change_30d": -5.6,
+        "change_90d": -22.25,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 0,
+        "percentile_label": "extremely low"
+      }
+    },
+    "eur-usd": {
+      "name": "eur-usd",
+      "value_formatted": "1.15",
+      "timestamp": "2026-09-18T00:00:00+00:00",
+      "signal": "at-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 71,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 48,
+        "trend_consistency": 100,
+        "percentile_score": 60,
+        "data_quality": 100
+      },
+      "context": "EUR/USD stable at 1.1464. Consolidating: FX conditions neutral.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0,
+        "change_1d_available": false,
+        "change_7d": 0,
+        "change_30d": -1.61,
+        "change_90d": 0.34,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 45,
+        "percentile_label": "average"
+      }
+    },
+    "hash-ribbon": {
+      "name": "hash-ribbon",
+      "value_formatted": "1.016",
+      "timestamp": "2026-09-25T09:05:24.267+00:00",
+      "signal": "bullish",
+      "regulatory_mode": "signal",
+      "confidence": 44,
+      "confidence_label": "Low",
+      "confidence_factors": {
+        "signal_strength": 11,
+        "trend_consistency": 100,
+        "percentile_score": 0,
+        "data_quality": 100
+      },
+      "context": "Hash Ribbon at 1.0160 (bullish, day 29).",
+      "trend": {
+        "direction": "rising",
+        "change_1d": 0.00423,
+        "change_1d_available": true,
+        "change_7d": 0.01,
+        "change_30d": 0.02,
+        "change_90d": 0.04,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 31,
+        "percentile_label": "below average"
+      }
+    }
+  },
+  "correlations": {
+    "bitcoin-price_vs_net-liquidity": {
+      "pair": "bitcoin-price_vs_net-liquidity",
+      "metric1": "bitcoin-price",
+      "metric2": "net-liquidity",
+      "value": -0.16,
+      "interpretation": "BTC uncorrelated with Net Liquidity (-0.16) - independent movement",
+      "observations": 30,
+      "window_start": "2026-08-26",
+      "window_end": "2026-09-25",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 1,
+      "declared_window_days": 30,
+      "effective_window_days": 90
+    },
+    "bitcoin-price_vs_spy": {
+      "pair": "bitcoin-price_vs_spy",
+      "metric1": "bitcoin-price",
+      "metric2": "spy",
+      "value": 0.65,
+      "interpretation": "BTC moderately correlated with S&P 500 (SPY) (+0.65)",
+      "observations": 20,
+      "window_start": "2026-08-26",
+      "window_end": "2026-09-24",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 4,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    },
+    "bitcoin-price_vs_dxy": {
+      "pair": "bitcoin-price_vs_dxy",
+      "metric1": "bitcoin-price",
+      "metric2": "dxy",
+      "value": -0.35,
+      "interpretation": "BTC weak negative correlation with Dollar Strength (UUP) (-0.35)",
+      "observations": 20,
+      "window_start": "2026-08-26",
+      "window_end": "2026-09-24",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 4,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    },
+    "bitcoin-price_vs_vxx": {
+      "pair": "bitcoin-price_vs_vxx",
+      "metric1": "bitcoin-price",
+      "metric2": "vxx",
+      "value": -0.35,
+      "interpretation": "BTC weak negative correlation with Volatility (VXX) (-0.35)",
+      "observations": 20,
+      "window_start": "2026-08-26",
+      "window_end": "2026-09-24",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 4,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    },
+    "bitcoin-price_vs_qqq": {
+      "pair": "bitcoin-price_vs_qqq",
+      "metric1": "bitcoin-price",
+      "metric2": "qqq",
+      "value": 0.71,
+      "interpretation": "BTC strongly correlated with Nasdaq 100 (QQQ) (+0.71) - moving together",
+      "observations": 20,
+      "window_start": "2026-08-26",
+      "window_end": "2026-09-24",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 4,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    },
+    "bitcoin-price_vs_eur-usd": {
+      "pair": "bitcoin-price_vs_eur-usd",
+      "metric1": "bitcoin-price",
+      "metric2": "eur-usd",
+      "value": 0.22,
+      "interpretation": "BTC weak positive correlation with EUR/USD (+0.22)",
+      "observations": 15,
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-18",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 4,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    },
+    "net-liquidity_vs_spy": {
+      "pair": "net-liquidity_vs_spy",
+      "metric1": "net-liquidity",
+      "metric2": "spy",
+      "value": -0.13,
+      "interpretation": "No meaningful correlation (-0.13)",
+      "observations": 20,
+      "window_start": "2026-08-26",
+      "window_end": "2026-09-24",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 4,
+      "declared_window_days": 30,
+      "effective_window_days": 90
+    },
+    "spy_vs_vxx": {
+      "pair": "spy_vs_vxx",
+      "metric1": "spy",
+      "metric2": "vxx",
+      "value": -0.73,
+      "interpretation": "Strong negative correlation (-0.73)",
+      "observations": 20,
+      "window_start": "2026-08-26",
+      "window_end": "2026-09-24",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 4,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    },
+    "hash-ribbon_vs_bitcoin-price": {
+      "pair": "hash-ribbon_vs_bitcoin-price",
+      "metric1": "hash-ribbon",
+      "metric2": "bitcoin-price",
+      "value": 0.14,
+      "interpretation": "No meaningful correlation (+0.14)",
+      "observations": 29,
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-25",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 1,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    }
+  },
+  "generated_at": "2026-09-25T09:05:48.379Z",
+  "data_quality": {
+    "metrics_available": 8,
+    "metrics_total": 8,
+    "correlations_computable": 9,
+    "correlations_total": 9,
+    "unavailable_metrics": [],
+    "unavailable_correlations": [],
+    "health_score": 100,
+    "severity": "ok"
+  }
+}

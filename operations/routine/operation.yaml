@@ -1,0 +1,25 @@
+# A routine: the person's own rules, applied to the data, returning one label.
+# primerkit ships no rules. Each routine's labels, briefings and rules come from its own
+# routine.yaml, and fill in this operation when it runs: its id becomes routine.<name>,
+# its version names the rules it read, and the label's enum is the routine's labels.
+id: routine
+version: 0.1.0
+kind: strategy
+title: Your routine
+inputs: []
+data:
+  sources:
+    # The briefings the routine names, as they stood at the run, beside the Bitcoin
+    # price table and the routine's position.
+    - connector: prereason
+      briefing: { from: input }
+      format: json
+output:
+  schema: schema.json
+  # The label is the whole decision. Sizes and orders come from the person's own
+  # routine.yaml, never from the model.
+  forbiddenFields: [size, amount, quantity, notional, target, side, order, leverage]
+# cites_data: the label cites a line of the data, not only the rules, and a label with a
+# target cites the rule it applies.
+checks: [schema, citations, cites_data, grounded_numbers, scope]
+render: render.md

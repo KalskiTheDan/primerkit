@@ -1,0 +1,11 @@
+---
+name: backtest
+description: Backtest one of the user's primerkit routines over a past window, with a model the user picks. Their own rules run tick by tick in three arms (PreReason's briefings as they stood, the price alone, and stale briefings) through a simulated account, and primerkit checks every answer and keeps the run. Use when the user asks to backtest a routine, or how their rules would have done.
+---
+
+1. Ask which routine, which window (a start and an end date, ending yesterday at the latest) and which model to pin, if the user has not said. Tell them each tick is one answer in each arm, so 90 daily ticks are 270 answers, and that every answer goes to that model.
+2. Call primerkit's `backtest_next` with the routine, the window and the model. It returns the run, a packet and its key, or the plan's problems, which you show as they are and stop. A model whose training cutoff primerkit does not know runs all the same: the memory check decides, and the report says so. Pass `cutoff` (a month, such as 2025-07) only when the user gives it from the model's card; never guess it. If it says the window is inside the model's training, ask the user, and call again with `inside_training: true` only on their yes.
+3. Answer each packet in a fresh context: start a subagent with that model pinned, give it the packet text as it is, and ask for its JSON reply only. Never answer a packet yourself in this conversation, and never give the subagent anything but the packet. The first packets, up to three, are the memory check: each asks the model one Bitcoin close with no data. Answer them the same way.
+4. Call `backtest_record` with the run, the key and the subagent's reply, exactly as it came. If it returns failures, start one more subagent with the packet and that note, and record its reply.
+5. Call `backtest_next` with the run for the next packet. Up to three subagents may run at once, since the ticks of one arm run in order. If it stops before the first tick because the model remembers the window, tell the user what it found, and go on with `inside_training: true` only on their yes. When it returns the report, show it as it is: a simulation on past data, not a forecast and not advice.
+6. If the conversation stops, `backtest_next` with the same run and model carries on at its next tick.

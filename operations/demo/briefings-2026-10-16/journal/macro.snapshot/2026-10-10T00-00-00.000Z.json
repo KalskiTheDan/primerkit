@@ -1,0 +1,899 @@
+{
+  "briefing_used": "macro.snapshot",
+  "briefing_metadata": {
+    "name": "Macro Snapshot",
+    "description": "Fed balance sheet, M2 money supply, Treasury yields at 2Y, 10Y and 30Y, 10Y breakeven inflation, dollar strength (the UUP ETF), and composite net liquidity with trend direction across all four, plus global central-bank balance-sheet overlay (BOJ total assets, ECB total assets, Eurozone M3) for cross-region liquidity context; and the latest US releases as published: the Employment Situation (nonfarm payrolls and the unemployment rate), the Consumer Price Index and the weekly jobless claims, each with what it revised and the next release date",
+    "tier": "free",
+    "metrics_count": 15,
+    "correlations_count": 2,
+    "correlations_window_days": 30,
+    "data_access": "Today + last 30 days",
+    "glossary": {
+      "uri": "/api/context/glossary",
+      "version": "1cf0525c48d8"
+    }
+  },
+  "date": "2026-10-10",
+  "metrics": {
+    "fed-balance": {
+      "name": "fed-balance",
+      "value_formatted": "$6.75T",
+      "timestamp": "2026-10-07T00:00:00+00:00",
+      "source": "Federal Reserve Board, H.4.1",
+      "display": "notice",
+      "period": "2026-10-07",
+      "known_since": "2026-10-08T20:30:06.000Z",
+      "known_basis": "released",
+      "signal": "at-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 56,
+      "confidence_label": "Medium",
+      "confidence_factors": {
+        "signal_strength": 38,
+        "trend_consistency": 100,
+        "percentile_score": 2,
+        "data_quality": 100
+      },
+      "context": "Fed balance sheet at $6.75T, the Wednesday level; 7d +0.1% (flat, within ±2%), 30d +0.1%, 90d +0.2%. Consolidating: balance sheet holding steady.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0.07,
+        "change_1d_available": false,
+        "change_7d": 0.07,
+        "change_7d_available": true,
+        "change_30d": 0.1,
+        "change_30d_available": true,
+        "change_90d": 0.18,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 79,
+        "percentile_label": "high",
+        "percentile_history_days": 8694
+      }
+    },
+    "tga": {
+      "name": "tga",
+      "value_formatted": "$880.25B",
+      "timestamp": "2026-10-07T00:00:00+00:00",
+      "source": "Federal Reserve Board, H.4.1",
+      "display": "notice",
+      "period": "2026-10-07",
+      "known_since": "2026-10-08T20:30:06.000Z",
+      "known_basis": "released",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 76,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 20,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "Treasury General Account at $880.25B, the week average; 7d -7.2% (falling), 30d -0.3%, 90d +13.7%. Releasing liquidity into system.",
+      "trend": {
+        "direction": "falling",
+        "change_1d": -7.21,
+        "change_1d_available": false,
+        "change_7d": -7.21,
+        "change_7d_available": true,
+        "change_30d": -0.35,
+        "change_30d_available": true,
+        "change_90d": 13.72,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "accelerating",
+        "percentile": 93,
+        "percentile_label": "extremely high",
+        "percentile_history_days": 8694
+      }
+    },
+    "net-liquidity": {
+      "name": "net-liquidity",
+      "value_formatted": "$5.87T",
+      "timestamp": "2026-10-09T00:00:00+00:00",
+      "source": "Calculated",
+      "display": "no",
+      "period": "2026-10-09",
+      "known_since": "2026-10-09T22:05:32.804Z",
+      "known_basis": "fetched",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 72,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 96,
+        "trend_consistency": 20,
+        "percentile_score": 90,
+        "data_quality": 100
+      },
+      "context": "Net liquidity at $5.87T: Fed total assets (Wednesday level, 2026-10-07) less the Treasury General Account (week average to 2026-10-07) and overnight reverse repo (daily, 2026-10-09); 7d +1.3% (flat, within ±2%), 30d +1.7%, 90d -1.6%.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0,
+        "change_1d_available": true,
+        "change_7d": 1.28,
+        "change_7d_available": true,
+        "change_30d": 1.71,
+        "change_30d_available": true,
+        "change_90d": -1.58,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 87,
+        "percentile_label": "above-average growth",
+        "percentile_history_days": 359
+      }
+    },
+    "m2-supply": {
+      "name": "m2-supply",
+      "value_formatted": "$23.34T",
+      "timestamp": "2026-08-01T00:00:00+00:00",
+      "source": "Federal Reserve Board, H.6",
+      "display": "notice",
+      "period": "2026-08",
+      "known_since": "2026-09-22T18:00:31.097Z",
+      "known_basis": "fetched",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 76,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 20,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "M2 money supply at $23.34T; +0.5% from July 2026, +1.4% from May 2026. Consolidating: money supply holding steady.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0.54,
+        "change_1d_available": false,
+        "change_7d": 0.54,
+        "change_7d_available": false,
+        "change_30d": 0.54,
+        "change_30d_available": true,
+        "change_90d": 1.43,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "30d",
+        "momentum": "steady",
+        "percentile": 100,
+        "percentile_label": "extremely high",
+        "percentile_history_days": 24684,
+        "percentile_readings": 812,
+        "percentile_since": "1959-01",
+        "change_30d_from": "2026-07",
+        "change_90d_from": "2026-05"
+      }
+    },
+    "treasury-2y": {
+      "name": "treasury-2y",
+      "value_formatted": "4.80%",
+      "timestamp": "2026-10-09T00:00:00+00:00",
+      "source": "U.S. Department of the Treasury, Daily Treasury Par Yield Curve Rates",
+      "display": "yes",
+      "period": "2026-10-09",
+      "known_since": "2026-10-09T22:30:40.385Z",
+      "known_basis": "fetched",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 38,
+      "confidence_label": "Low",
+      "confidence_factors": {
+        "signal_strength": 3,
+        "trend_consistency": 60,
+        "percentile_score": 44,
+        "data_quality": 100
+      },
+      "context": "2Y Treasury yield at 4.8%; 7d -0.03 pp (flat, within ±0.10 pp), 30d +0.37 pp, 90d +0.59 pp. Consolidating: the yield held within its band over 7 days.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0.05,
+        "change_1d_available": true,
+        "change_7d": -0.03,
+        "change_7d_available": true,
+        "change_30d": 0.37,
+        "change_30d_available": true,
+        "change_90d": 0.59,
+        "change_90d_available": true,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 72,
+        "percentile_label": "above average",
+        "percentile_history_days": 13429
+      }
+    },
+    "treasury-10y": {
+      "name": "treasury-10y",
+      "value_formatted": "5.24%",
+      "timestamp": "2026-10-09T00:00:00+00:00",
+      "source": "U.S. Department of the Treasury, Daily Treasury Par Yield Curve Rates; before 1990, the Federal Reserve Board's H.15 Treasury constant maturities as FRED's DGS10 serves it",
+      "display": "yes",
+      "period": "2026-10-09",
+      "known_since": "2026-10-09T22:30:40.385Z",
+      "known_basis": "fetched",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 34,
+      "confidence_label": "Low",
+      "confidence_factors": {
+        "signal_strength": 16,
+        "trend_consistency": 60,
+        "percentile_score": 0,
+        "data_quality": 100
+      },
+      "context": "10Y Treasury yield at 5.24%; 7d -0.04 pp (flat, within ±0.11 pp), 30d +0.41 pp, 90d +0.68 pp. Consolidating: the yield held within its band over 7 days.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0.02,
+        "change_1d_available": true,
+        "change_7d": -0.04,
+        "change_7d_available": true,
+        "change_30d": 0.41,
+        "change_30d_available": true,
+        "change_90d": 0.68,
+        "change_90d_available": true,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 49,
+        "percentile_label": "average",
+        "percentile_history_days": 23656
+      }
+    },
+    "treasury-30y": {
+      "name": "treasury-30y",
+      "value_formatted": "5.60%",
+      "timestamp": "2026-10-09T00:00:00+00:00",
+      "source": "U.S. Department of the Treasury, Daily Treasury Par Yield Curve Rates",
+      "display": "yes",
+      "period": "2026-10-09",
+      "known_since": "2026-10-09T22:30:40.385Z",
+      "known_basis": "fetched",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 45,
+      "confidence_label": "Medium",
+      "confidence_factors": {
+        "signal_strength": 25,
+        "trend_consistency": 60,
+        "percentile_score": 36,
+        "data_quality": 100
+      },
+      "context": "30Y Treasury yield at 5.6%; 7d -0.03 pp (flat, within ±0.11 pp), 30d +0.32 pp, 90d +0.54 pp. Consolidating: the yield held within its band over 7 days.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0,
+        "change_1d_available": true,
+        "change_7d": -0.03,
+        "change_7d_available": true,
+        "change_30d": 0.32,
+        "change_30d_available": true,
+        "change_90d": 0.54,
+        "change_90d_available": true,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 68,
+        "percentile_label": "above average",
+        "percentile_history_days": 13429
+      }
+    },
+    "yield-curve": {
+      "name": "yield-curve",
+      "value_formatted": "0.44%",
+      "timestamp": "2026-10-09T00:00:00+00:00",
+      "source": "PreReason's calculation from the U.S. Department of the Treasury's Daily Treasury Par Yield Curve Rates; before 1990, the Federal Reserve Board's H.15 Treasury constant maturities as FRED's T10Y2Y computes them",
+      "display": "yes",
+      "period": "2026-10-09",
+      "known_since": "2026-10-09T22:30:40.385Z",
+      "known_basis": "fetched",
+      "signal": "at-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 64,
+      "confidence_label": "Medium",
+      "confidence_factors": {
+        "signal_strength": 44,
+        "trend_consistency": 100,
+        "percentile_score": 32,
+        "data_quality": 100
+      },
+      "context": "Yield curve spread (10Y-2Y) at 0.44% (PreReason's calculation: Treasury's 10 year par yield less its 2 year par yield); 7d -0.01 pp (flat, within ±0.05 pp), 30d +0.04 pp, 90d +0.09 pp. Consolidating: the spread held within its band over 7 days.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": -0.03,
+        "change_1d_available": true,
+        "change_7d": -0.01,
+        "change_7d_available": true,
+        "change_30d": 0.04,
+        "change_30d_available": true,
+        "change_90d": 0.09,
+        "change_90d_available": true,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 36,
+        "percentile_label": "below average",
+        "percentile_history_days": 18392
+      }
+    },
+    "dxy": {
+      "name": "dxy",
+      "value_formatted": "$29.02",
+      "timestamp": "2026-10-09T20:00:00+00:00",
+      "source": "Finnhub",
+      "label": "Dollar Fund (UUP)",
+      "instrument": "etf-uup",
+      "display": "no",
+      "period": "2026-10-09T20:00Z",
+      "known_since": "2026-10-09T20:15:01.938Z",
+      "known_basis": "fetched",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 83,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 60,
+        "percentile_score": 77,
+        "data_quality": 100
+      },
+      "context": "The dollar fund (UUP) at $29.02 a share; 7d +0.5% (flat, within ±2%), 30d +3.8%, 90d +2.3%. Consolidating: the fund's share price in range.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0.14,
+        "change_1d_available": true,
+        "change_7d": 0.45,
+        "change_7d_available": true,
+        "change_30d": 3.75,
+        "change_30d_available": true,
+        "change_90d": 2.26,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 83,
+        "percentile_label": "high",
+        "percentile_history_days": 7163
+      }
+    },
+    "breakeven-10y": {
+      "name": "breakeven-10y",
+      "value_formatted": "2.33%",
+      "timestamp": "2026-10-09T00:00:00+00:00",
+      "source": "U.S. Department of the Treasury, Daily Treasury Par Yield Curve Rates and Daily Treasury Par Real Yield Curve Rates",
+      "display": "yes",
+      "period": "2026-10-09",
+      "known_since": "2026-10-09T22:30:40.385Z",
+      "known_basis": "fetched",
+      "signal": "at-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 71,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 47,
+        "trend_consistency": 100,
+        "percentile_score": 60,
+        "data_quality": 100
+      },
+      "context": "10Y breakeven inflation at 2.33% (PreReason's calculation: Treasury's 10 year par nominal yield less its 10 year par real yield); 7d -0.03 pp (flat, within ±0.0472 pp), 30d -0.04 pp, 90d +0.09 pp. Consolidating: the breakeven held within its band over 7 days.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": -0.02,
+        "change_1d_available": true,
+        "change_7d": -0.03,
+        "change_7d_available": true,
+        "change_30d": -0.04,
+        "change_30d_available": true,
+        "change_90d": 0.09,
+        "change_90d_available": true,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 57,
+        "percentile_label": "average",
+        "percentile_history_days": 1250
+      }
+    },
+    "boj-balance": {
+      "name": "boj-balance",
+      "value_formatted": "¥625.03T",
+      "timestamp": "2026-09-01T00:00:00+00:00",
+      "source": "FRED (Federal Reserve)",
+      "display": "no",
+      "period": "2026-09",
+      "known_since": "2026-10-08T02:00:25.761Z",
+      "known_basis": "fetched",
+      "signal": "below-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 90,
+      "confidence_label": "Very High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 100,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "Bank of Japan Total Assets at ¥625.03T; -3.0% from August 2026, -2.3% from June 2026. Consolidating: BOJ balance sheet steady.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": -3.05,
+        "change_1d_available": false,
+        "change_7d": -3.05,
+        "change_7d_available": false,
+        "change_30d": -3.05,
+        "change_30d_available": true,
+        "change_90d": -2.27,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "30d",
+        "momentum": "steady",
+        "percentile": 0,
+        "percentile_label": "extremely low",
+        "percentile_history_days": 1949,
+        "percentile_readings": 65,
+        "percentile_since": "2021-05",
+        "change_30d_from": "2026-08",
+        "change_90d_from": "2026-06"
+      }
+    },
+    "ecb-balance": {
+      "name": "ecb-balance",
+      "value_formatted": "€5.95T",
+      "timestamp": "2026-10-02T00:00:00+00:00",
+      "source": "ECB",
+      "display": "no",
+      "period": "2026-10-02",
+      "known_since": "2026-10-09T00:00:00.000Z",
+      "known_basis": "release_schedule",
+      "signal": "at-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 55,
+      "confidence_label": "Medium",
+      "confidence_factors": {
+        "signal_strength": 37,
+        "trend_consistency": 100,
+        "percentile_score": 0,
+        "data_quality": 100
+      },
+      "context": "ECB Total Assets at €5.95T; 7d +0.9% (flat, within ±2%), 30d +0.6%, 90d 0.0%. Consolidating: ECB balance sheet steady.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0.86,
+        "change_1d_available": false,
+        "change_7d": 0.86,
+        "change_7d_available": true,
+        "change_30d": 0.6,
+        "change_30d_available": true,
+        "change_90d": -0.02,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 82,
+        "percentile_label": "high",
+        "percentile_history_days": 77
+      }
+    },
+    "eu-m3": {
+      "name": "eu-m3",
+      "value_formatted": "€17.65T",
+      "timestamp": "2026-08-01T00:00:00+00:00",
+      "source": "ECB",
+      "display": "no",
+      "period": "2026-08",
+      "known_since": "2026-09-25T08:01:13.680Z",
+      "known_basis": "fetched",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 76,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 20,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "Eurozone M3 money supply at €17.65T; +0.2% from July 2026, +0.7% from May 2026. Consolidating: euro area money supply holding steady.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0.18,
+        "change_1d_available": false,
+        "change_7d": 0.18,
+        "change_7d_available": false,
+        "change_30d": 0.18,
+        "change_30d_available": true,
+        "change_90d": 0.7,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "30d",
+        "momentum": "steady",
+        "percentile": 99,
+        "percentile_label": "extremely high",
+        "percentile_history_days": 4230,
+        "percentile_readings": 140,
+        "percentile_since": "2015-01",
+        "change_30d_from": "2026-07",
+        "change_90d_from": "2026-05"
+      }
+    },
+    "us-debt-total": {
+      "name": "us-debt-total",
+      "value_formatted": "$40.31T",
+      "timestamp": "2026-10-08T21:00:00+00:00",
+      "source": "U.S. Treasury Fiscal Data",
+      "display": "yes",
+      "period": "2026-10-08T21:00Z",
+      "known_since": "2026-10-09T22:00:36.949Z",
+      "known_basis": "fetched",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 76,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 20,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "US total public debt at $40.31T; 7d +0.1% (flat, within ±2%), 30d +0.6%, 90d +1.8%. Debt growth pace steady.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0.05,
+        "change_1d_available": true,
+        "change_7d": 0.11,
+        "change_7d_available": true,
+        "change_30d": 0.55,
+        "change_30d_available": true,
+        "change_90d": 1.83,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 98,
+        "percentile_label": "extremely high",
+        "percentile_history_days": 84
+      }
+    },
+    "t10y3m-spread": {
+      "name": "t10y3m-spread",
+      "value_formatted": "0.99%",
+      "timestamp": "2026-10-09T00:00:00+00:00",
+      "source": "Calculated",
+      "display": "no",
+      "period": "2026-10-09",
+      "known_since": "2026-10-09T23:05:33.671Z",
+      "known_basis": "fetched",
+      "signal": "above-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 88,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 60,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "10Y-3M Treasury spread at 0.99%; 7d -0.10 pp (falling), 30d +0.12 pp, 90d +0.28 pp. Spread narrowing.",
+      "trend": {
+        "direction": "falling",
+        "change_1d": 0,
+        "change_1d_available": true,
+        "change_7d": -0.1,
+        "change_7d_available": true,
+        "change_30d": 0.12,
+        "change_30d_available": true,
+        "change_90d": 0.28,
+        "change_90d_available": true,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "accelerating",
+        "percentile": 94,
+        "percentile_label": "extremely high",
+        "percentile_history_days": 160
+      }
+    }
+  },
+  "correlations": {
+    "dxy_vs_net-liquidity": {
+      "pair": "dxy_vs_net-liquidity",
+      "metric1": "dxy",
+      "metric2": "net-liquidity",
+      "value": -0.08,
+      "interpretation": "No meaningful correlation (-0.08)",
+      "observations": 20,
+      "window_start": "2026-09-11",
+      "window_end": "2026-10-09",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 3,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    },
+    "fed-balance_vs_tga": {
+      "pair": "fed-balance_vs_tga",
+      "metric1": "fed-balance",
+      "metric2": "tga",
+      "value": 0.01,
+      "interpretation": "No meaningful correlation (+0.01)",
+      "observations": 12,
+      "window_start": "2026-07-15",
+      "window_end": "2026-10-07",
+      "return_horizon_days": 7,
+      "return_cadence": "weekly",
+      "max_gap_days": 7,
+      "declared_window_days": 30,
+      "effective_window_days": 90
+    }
+  },
+  "release_state": {
+    "as_of": "2026-10-10T23:59:59.000Z",
+    "programs": [
+      {
+        "program": "empsit",
+        "name": "The Employment Situation",
+        "publisher": "U.S. Bureau of Labor Statistics",
+        "latest": {
+          "release": "empsit-2026-10-02",
+          "released_at": "2026-10-02T12:30:00.000Z",
+          "reference_period": "2026-09"
+        },
+        "figures": [
+          {
+            "label": "Total nonfarm payroll employment, seasonally adjusted",
+            "period": "2026-09",
+            "value": 159044,
+            "unit": "thousands",
+            "estimate": "first",
+            "basis": "published"
+          },
+          {
+            "label": "Change from 2026-08",
+            "period": "2026-09",
+            "value": 29,
+            "unit": "thousands change",
+            "estimate": "first",
+            "basis": "calculated"
+          },
+          {
+            "label": "Unemployment rate, seasonally adjusted",
+            "period": "2026-09",
+            "value": 4.2,
+            "unit": "percent",
+            "estimate": "first",
+            "basis": "published"
+          },
+          {
+            "label": "Average hourly earnings, total private, seasonally adjusted",
+            "period": "2026-09",
+            "value": 37.81,
+            "unit": "dollars",
+            "estimate": "first",
+            "basis": "published"
+          },
+          {
+            "label": "Average hourly earnings, change from 2026-08",
+            "period": "2026-09",
+            "value": 0.1,
+            "unit": "percent change",
+            "estimate": "first",
+            "basis": "calculated"
+          },
+          {
+            "label": "Average hourly earnings, change over 12 months, seasonally adjusted",
+            "period": "2026-09",
+            "value": 3,
+            "unit": "percent change",
+            "estimate": "first",
+            "basis": "calculated"
+          }
+        ],
+        "revised": [
+          {
+            "label": "Payroll employment change",
+            "period": "2026-08",
+            "from": 162,
+            "to": 133,
+            "unit": "thousands change",
+            "estimate": "second"
+          },
+          {
+            "label": "Payroll employment change",
+            "period": "2026-07",
+            "from": 21,
+            "to": -10,
+            "unit": "thousands change",
+            "estimate": "third"
+          }
+        ],
+        "revised_more": 0,
+        "next": {
+          "date": "2026-11-06",
+          "at": "2026-11-06T13:30:00.000Z",
+          "reference_period": "2026-10"
+        }
+      },
+      {
+        "program": "cpi",
+        "name": "Consumer Price Index",
+        "publisher": "U.S. Bureau of Labor Statistics",
+        "latest": {
+          "release": "cpi-2026-09-11",
+          "released_at": "2026-09-11T12:30:00.000Z",
+          "reference_period": "2026-08"
+        },
+        "figures": [
+          {
+            "label": "CPI-U, all items, seasonally adjusted, index",
+            "period": "2026-08",
+            "value": 334.131,
+            "unit": "index",
+            "estimate": "first",
+            "basis": "published"
+          },
+          {
+            "label": "Change from 2026-07",
+            "period": "2026-08",
+            "value": 0.4,
+            "unit": "percent change",
+            "estimate": "first",
+            "basis": "calculated"
+          },
+          {
+            "label": "Change over 12 months, not seasonally adjusted",
+            "period": "2026-08",
+            "value": 3.4,
+            "unit": "percent change",
+            "estimate": "final",
+            "basis": "calculated"
+          },
+          {
+            "label": "CPI-U, all items less food and energy, seasonally adjusted, index",
+            "period": "2026-08",
+            "value": 337.765,
+            "unit": "index",
+            "estimate": "first",
+            "basis": "published"
+          },
+          {
+            "label": "All items less food and energy, change from 2026-07",
+            "period": "2026-08",
+            "value": 0.3,
+            "unit": "percent change",
+            "estimate": "first",
+            "basis": "calculated"
+          },
+          {
+            "label": "All items less food and energy, change over 12 months, not seasonally adjusted",
+            "period": "2026-08",
+            "value": 2.4,
+            "unit": "percent change",
+            "estimate": "final",
+            "basis": "calculated"
+          }
+        ],
+        "revised": [],
+        "revised_more": 0,
+        "next": {
+          "date": "2026-10-14",
+          "at": "2026-10-14T12:30:00.000Z",
+          "reference_period": "2026-09"
+        }
+      },
+      {
+        "program": "ui_claims",
+        "name": "Unemployment Insurance Weekly Claims",
+        "publisher": "U.S. Department of Labor",
+        "latest": {
+          "release": "ui-claims-2026-10-08",
+          "released_at": "2026-10-08T12:30:00.000Z",
+          "reference_period": "2026-10-03"
+        },
+        "figures": [
+          {
+            "label": "Initial claims, seasonally adjusted",
+            "period": "2026-10-03",
+            "value": 197000,
+            "unit": "claims",
+            "estimate": "advance",
+            "basis": "published"
+          },
+          {
+            "label": "Initial claims, seasonally adjusted, the week before",
+            "period": "2026-09-26",
+            "value": 199000,
+            "unit": "claims",
+            "estimate": "revised",
+            "basis": "published"
+          },
+          {
+            "label": "4 week moving average, seasonally adjusted",
+            "period": "2026-10-03",
+            "value": 198000,
+            "unit": "claims",
+            "estimate": "advance",
+            "basis": "published"
+          }
+        ],
+        "revised": [
+          {
+            "label": "Initial claims, seasonally adjusted",
+            "period": "2026-09-26",
+            "from": 197000,
+            "to": 199000,
+            "unit": "claims",
+            "estimate": "revised"
+          }
+        ],
+        "revised_more": 0,
+        "next": {
+          "date": "2026-10-15",
+          "at": "2026-10-15T12:30:00.000Z",
+          "reference_period": "2026-10-10"
+        }
+      }
+    ],
+    "calculation_basis": "Changes and percentages are PreReason's calculations from the publishers' levels within one release; levels, rates and claims are the publishers' own figures.",
+    "sources": [
+      "U.S. Bureau of Labor Statistics",
+      "U.S. Department of Labor",
+      "PreReason (calculated)"
+    ]
+  },
+  "generated_at": "2026-10-16T10:25:17.337Z",
+  "data_quality": {
+    "metrics_available": 15,
+    "metrics_total": 15,
+    "correlations_computable": 2,
+    "correlations_total": 2,
+    "unavailable_metrics": [],
+    "unavailable_correlations": [],
+    "health_score": 100,
+    "severity": "ok"
+  },
+  "_tier_context": {
+    "your_tier": "free",
+    "higher_tier_features": [
+      "Percentile rankings (Basic+)",
+      "Extended 90d momentum (Basic+)",
+      "Regime classification (Pro)",
+      "Divergence detection (Pro)",
+      "Historical context (Pro)",
+      "Up to 3 years of historical data (Basic+)",
+      "Full historical data access (Pro)"
+    ],
+    "related_briefings": [
+      {
+        "id": "macro.liquidity",
+        "tier": "basic",
+        "description": "Adds percentile rankings"
+      },
+      {
+        "id": "macro.auctions",
+        "tier": "basic",
+        "description": "Adds percentile rankings"
+      },
+      {
+        "id": "macro.calendar",
+        "tier": "basic",
+        "description": "Adds the scheduled dates ahead and the latest us releases as they came out: the next producer price index, retail sales, gdp and personal income and outlays releases, the fomc minutes, the federal reserve's and the ecb's next decisions, treasury's next quarterly refunding release and the treasury coupon auctions of the week ahead on treasury's tentative schedule, or the next one when the week has none, each dated from its publisher's own calendar (dates only, no figures from them); and the us employment situation, consumer price index and weekly initial claims as release state: for each, the latest release and when it came out, its headline figures within that one release with each figure's estimate (first, second, advance, revised), what the release revised, and the next scheduled release, all from the publishers' own figures with every version kept. beside it the federal funds rate, the days to the next treasury auction, euro area hicp and the boj policy rate."
+      },
+      {
+        "id": "macro.rates",
+        "tier": "pro",
+        "description": "Adds percentile rankings"
+      },
+      {
+        "id": "macro.global-liquidity",
+        "tier": "pro",
+        "description": "Adds percentile rankings, extended 90d momentum"
+      }
+    ]
+  }
+}

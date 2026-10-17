@@ -1,0 +1,135 @@
+{
+  "briefing_used": "btc.pulse",
+  "briefing_metadata": {
+    "name": "BTC Pulse",
+    "description": "Quick price action check - price, 24h change, dominance",
+    "tier": "free",
+    "metrics_count": 3,
+    "correlations_count": 1,
+    "correlations_window_days": 30,
+    "data_access": "All available data",
+    "glossary": {
+      "uri": "/api/context/glossary",
+      "version": "0c4345b145bd"
+    },
+    "earliest_usable_date": "2010-08-18"
+  },
+  "date": "2026-09-25",
+  "metrics": {
+    "bitcoin-price": {
+      "name": "bitcoin-price",
+      "value_formatted": "$84,512.32",
+      "timestamp": "2026-09-25T09:04:40.958903+00:00",
+      "signal": "bullish",
+      "regulatory_mode": "signal",
+      "confidence": 81,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 64,
+        "trend_consistency": 100,
+        "percentile_score": 77,
+        "data_quality": 100
+      },
+      "context": "BTC at $84,512.32, up 10.6% over 7d. Accelerating upward - recent gains exceeding longer-term pace",
+      "trend": {
+        "direction": "rising",
+        "change_1d": 0.14,
+        "change_1d_available": true,
+        "change_7d": 10.62,
+        "change_30d": 7.58,
+        "change_90d": 40.97,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "accelerating",
+        "percentile": 83,
+        "percentile_label": "high"
+      }
+    },
+    "bitcoin-change-24h": {
+      "name": "bitcoin-change-24h",
+      "value_formatted": "1.08",
+      "timestamp": "2026-09-25T09:04:40.958903+00:00",
+      "signal": "neutral",
+      "regulatory_mode": "signal",
+      "confidence": 53,
+      "confidence_label": "Medium",
+      "confidence_factors": {
+        "signal_strength": 45,
+        "trend_consistency": 60,
+        "percentile_score": 36,
+        "data_quality": 100
+      },
+      "context": "BTC 24h change at +1.08%, up. Strong short-term momentum: Accelerating above average daily moves.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 3.16,
+        "change_1d_available": true,
+        "change_7d": 0.74,
+        "change_30d": 1.61,
+        "change_90d": 1.2,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 62,
+        "percentile_label": "above average"
+      }
+    },
+    "bitcoin-dominance": {
+      "name": "bitcoin-dominance",
+      "value_formatted": "58.5%",
+      "timestamp": "2026-09-25T08:56:00+00:00",
+      "signal": "neutral",
+      "regulatory_mode": "signal",
+      "confidence": 52,
+      "confidence_label": "Medium",
+      "confidence_factors": {
+        "signal_strength": 44,
+        "trend_consistency": 60,
+        "percentile_score": 32,
+        "data_quality": 100
+      },
+      "context": "BTC dominance at 58.5%, falling. Decelerating: alt season conditions developing, risk appetite broadening.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": -0.68,
+        "change_1d_available": true,
+        "change_7d": -0.05,
+        "change_30d": -0.74,
+        "change_90d": 2.67,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 64,
+        "percentile_label": "above average"
+      }
+    }
+  },
+  "correlations": {
+    "bitcoin-price_vs_bitcoin-dominance": {
+      "pair": "bitcoin-price_vs_bitcoin-dominance",
+      "metric1": "bitcoin-price",
+      "metric2": "bitcoin-dominance",
+      "value": 0.26,
+      "interpretation": "Weak positive correlation (+0.26)",
+      "observations": 29,
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-25",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 1,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    }
+  },
+  "generated_at": "2026-09-25T09:05:46.360Z",
+  "data_quality": {
+    "metrics_available": 3,
+    "metrics_total": 3,
+    "correlations_computable": 1,
+    "correlations_total": 1,
+    "unavailable_metrics": [],
+    "unavailable_correlations": [],
+    "health_score": 100,
+    "severity": "ok"
+  }
+}

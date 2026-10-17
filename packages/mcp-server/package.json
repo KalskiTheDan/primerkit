@@ -1,0 +1,14 @@
+{
+  "name": "@primerkit/mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@primerkit/core": "0.1.0",
+    "@primerkit/connector-prereason": "0.1.0",
+    "@primerkit/session": "0.1.0"
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "briefing_used": "btc.context",
+  "briefing_metadata": {
+    "name": "BTC Context",
+    "description": "Bitcoin price, mining health, and liquidity overview with 7-day and 30-day trends",
+    "tier": "free",
+    "metrics_count": 5,
+    "correlations_count": 1,
+    "correlations_window_days": 30,
+    "data_access": "All available data",
+    "glossary": {
+      "uri": "/api/context/glossary",
+      "version": "1cf0525c48d8"
+    },
+    "earliest_usable_date": "2009-01-03"
+  },
+  "date": "2026-10-16",
+  "metrics": {
+    "bitcoin-price": {
+      "name": "bitcoin-price",
+      "value_formatted": "$82,099.23",
+      "timestamp": "2026-10-16T09:28:40.691864+00:00",
+      "source": "Coinbase",
+      "display": "no",
+      "signal": "bullish",
+      "regulatory_mode": "signal",
+      "confidence": 61,
+      "confidence_label": "Medium",
+      "confidence_factors": {
+        "signal_strength": 48,
+        "trend_consistency": 60,
+        "percentile_score": 70,
+        "data_quality": 100
+      },
+      "context": "BTC at $82,099.23; 7d +0.6% (flat, within ±2%), 30d +8.6%, 90d +28.4%.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0.7,
+        "change_1d_available": true,
+        "change_7d": 0.55,
+        "change_7d_available": true,
+        "change_30d": 8.58,
+        "change_30d_available": true,
+        "change_90d": 28.45,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 81,
+        "percentile_label": "high",
+        "percentile_history_days": 5903
+      }
+    },
+    "bitcoin-hash-rate": {
+      "name": "bitcoin-hash-rate",
+      "value_formatted": "997.94 EH/s",
+      "timestamp": "2026-10-16T00:00:00+00:00",
+      "source": "mempool.space",
+      "display": "no",
+      "signal": "neutral",
+      "regulatory_mode": "signal",
+      "confidence": 35,
+      "confidence_label": "Low",
+      "confidence_factors": {
+        "signal_strength": 40,
+        "trend_consistency": 20,
+        "percentile_score": 12,
+        "data_quality": 100
+      },
+      "context": "Hash rate at 997.94 EH/s; 7d +8.9% (rising), 30d -2.3%, 90d +25.7%. Network security strengthening, miners deploying capacity.",
+      "trend": {
+        "direction": "rising",
+        "change_1d": -7.94,
+        "change_1d_available": true,
+        "change_7d": 8.93,
+        "change_7d_available": true,
+        "change_30d": -2.25,
+        "change_30d_available": true,
+        "change_90d": 25.73,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "accelerating",
+        "percentile": 74,
+        "percentile_label": "moderate growth",
+        "percentile_history_days": 364
+      }
+    },
+    "bitcoin-difficulty": {
+      "name": "bitcoin-difficulty",
+      "value_formatted": "132.7T",
+      "timestamp": "2026-10-16T00:00:00+00:00",
+      "source": "mempool.space",
+      "display": "no",
+      "signal": "neutral",
+      "regulatory_mode": "signal",
+      "confidence": 59,
+      "confidence_label": "Medium",
+      "confidence_factors": {
+        "signal_strength": 47,
+        "trend_consistency": 60,
+        "percentile_score": 60,
+        "data_quality": 100
+      },
+      "context": "Mining difficulty at 132.7T; 7d 0.0% (flat, within ±2%), 30d +4.1%, 90d +4.4%. Consolidating: network hashrate in equilibrium.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0,
+        "change_1d_available": true,
+        "change_7d": 0,
+        "change_7d_available": true,
+        "change_30d": 4.13,
+        "change_30d_available": true,
+        "change_90d": 4.36,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 42,
+        "percentile_label": "typical pace",
+        "percentile_history_days": 364
+      }
+    },
+    "net-liquidity": {
+      "name": "net-liquidity",
+      "value_formatted": "$5.87T",
+      "timestamp": "2026-10-15T00:00:00+00:00",
+      "source": "Calculated",
+      "display": "no",
+      "signal": "at-trend",
+      "regulatory_mode": "descriptive",
+      "confidence": 71,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 48,
+        "trend_consistency": 100,
+        "percentile_score": 60,
+        "data_quality": 100
+      },
+      "context": "Net liquidity at $5.87T: Fed total assets (Wednesday level, 2026-10-14) less the Treasury General Account (week average to 2026-10-14) and overnight reverse repo (daily, 2026-10-15); 7d +0.1% (flat, within ±2%), 30d +0.3%, 90d -1.9%.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": 0.07,
+        "change_1d_available": true,
+        "change_7d": 0.07,
+        "change_7d_available": true,
+        "change_30d": 0.26,
+        "change_30d_available": true,
+        "change_90d": -1.93,
+        "change_90d_available": true,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 45,
+        "percentile_label": "typical pace",
+        "percentile_history_days": 358
+      }
+    },
+    "hash-ribbon": {
+      "name": "hash-ribbon",
+      "value_formatted": "1.025",
+      "timestamp": "2026-10-16T00:00:00+00:00",
+      "source": "Calculated",
+      "display": "no",
+      "signal": "bullish",
+      "regulatory_mode": "signal",
+      "confidence": 35,
+      "confidence_label": "Low",
+      "confidence_factors": {
+        "signal_strength": 17,
+        "trend_consistency": 60,
+        "percentile_score": 0,
+        "data_quality": 100
+      },
+      "context": "Hash Ribbon at 1.0250 (bullish, day 50); 7d -0.00116 points (flat, within ±0.00502 points), 30d +0.02 points, 90d +0.03 points.",
+      "trend": {
+        "direction": "flat",
+        "change_1d": -0.000315,
+        "change_1d_available": true,
+        "change_7d": -0.00116,
+        "change_7d_available": true,
+        "change_30d": 0.02,
+        "change_30d_available": true,
+        "change_90d": 0.03,
+        "change_90d_available": true,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 39,
+        "percentile_label": "below average",
+        "percentile_history_days": 6259
+      }
+    }
+  },
+  "correlations": {
+    "bitcoin-price_vs_net-liquidity": {
+      "pair": "bitcoin-price_vs_net-liquidity",
+      "metric1": "bitcoin-price",
+      "metric2": "net-liquidity",
+      "value": -0.07,
+      "interpretation": "BTC uncorrelated with Net Liquidity (-0.07) - independent movement",
+      "observations": 22,
+      "window_start": "2026-09-16",
+      "window_end": "2026-10-15",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 4,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    }
+  },
+  "generated_at": "2026-10-16T09:28:46.071Z",
+  "data_quality": {
+    "metrics_available": 5,
+    "metrics_total": 5,
+    "correlations_computable": 1,
+    "correlations_total": 1,
+    "unavailable_metrics": [],
+    "unavailable_correlations": [],
+    "health_score": 100,
+    "severity": "ok"
+  },
+  "_tier_context": {
+    "your_tier": "free",
+    "higher_tier_features": [
+      "Percentile rankings (Basic+)",
+      "Extended 90d momentum (Basic+)",
+      "Regime classification (Pro)",
+      "Divergence detection (Pro)",
+      "Historical context (Pro)",
+      "Extended historical data from Jan 2025 (Basic+)",
+      "Full historical data access (Pro)"
+    ],
+    "related_briefings": [
+      {
+        "id": "btc.momentum",
+        "tier": "basic",
+        "description": "Adds percentile rankings"
+      },
+      {
+        "id": "btc.on-chain",
+        "tier": "basic",
+        "description": "Adds percentile rankings"
+      },
+      {
+        "id": "btc.miner-survival",
+        "tier": "basic",
+        "description": "Adds percentile rankings"
+      },
+      {
+        "id": "btc.full",
+        "tier": "pro",
+        "description": "Adds causal reasoning, percentile rankings, historical context"
+      },
+      {
+        "id": "btc.factors",
+        "tier": "pro",
+        "description": "Adds causal reasoning, historical context"
+      },
+      {
+        "id": "btc.energy",
+        "tier": "pro",
+        "description": "Adds causal reasoning, percentile rankings, historical context"
+      },
+      {
+        "id": "btc.treasury",
+        "tier": "pro",
+        "description": "Adds corporate bitcoin treasury holdings: changes in holdings from sec filings and coingecko"
+      },
+      {
+        "id": "btc.etf-flows",
+        "tier": "basic",
+        "description": "Adds percentile rankings"
+      }
+    ]
+  }
+}

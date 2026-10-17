@@ -1,0 +1,6 @@
+{
+  "about": { "company": "Fictional Group Corp", "ticker": "FXMP", "market": "us", "briefing": "equities.company/fxmp" },
+  "window": { "since": "2026-09-28", "until": "2026-10-09", "basis": "each record by the date it shows" },
+  "records": [],
+  "coverage": "Nothing found in Sample Filings Registry 8-K items (fictional companies, for tests) from 2026-09-28 to 2026-10-09 (each record by the date it shows)."
+}

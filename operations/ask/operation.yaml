@@ -1,0 +1,34 @@
+# Ask the briefings.
+id: ask
+# 0.2.0 (2026-10-10): an answer may add up to four sentences of background from the model's
+# general knowledge, with no number and no advice, shown apart from what the data says.
+# 0.3.0 (2026-10-14): a direction needs a change in the lines a claim cites, told in the
+# primer and held by grounded_directions; a line that gives only a level supports none.
+version: 0.3.0
+kind: research
+title: Ask the briefings
+inputs:
+  - name: question
+    type: string
+    required: true
+  - name: briefings
+    type: string[]
+    required: false
+data:
+  sources:
+    # The briefings come from the question: named by the person, or chosen from the
+    # live catalog. The served JSON reads best where the model's context holds it,
+    # and the model's fitness check proposes the format for it.
+    - connector: prereason
+      briefing: { from: input }
+      format: json
+  # 12,000 until 2026-10-09: one company briefing, cut down as far as the fit goes, was still
+  # 12,965 tokens (Broadcom), and three chip companies 14,408, so those questions got no
+  # answer. 32,000 is well inside a hosted model's context; a local model's own context
+  # still bounds the packet first.
+  maxPacketTokens: 32000
+output:
+  schema: schema.json
+  forbiddenFields: [action, side, size]
+checks: [schema, citations, grounded_numbers, grounded_directions, scope]
+render: render.md

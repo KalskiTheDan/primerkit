@@ -1,0 +1,6 @@
+# A release is exported with git archive; the notes are left out of a release.
+notes/ export-ignore
+notes/** export-ignore
+# The gallery of screens is left out of a release too.
+docs/gallery/ export-ignore
+docs/gallery/** export-ignore

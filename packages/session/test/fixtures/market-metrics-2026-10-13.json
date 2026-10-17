@@ -1,0 +1,217 @@
+{
+  "about": "Made-up answers in the shape GET /api/metrics/{id} serves (metric, display_name, timestamp, trend, context, source, notices, data_quality), for the market map and positioning tests. No value here was read from PreReason. Every value, source and notice is made up for tests: Acme, Sample, the Sample Energy Office and the Sample Positions Office are fictional.",
+  "read_at": "2026-10-13T14:02:00.000Z",
+  "answers": {
+    "etf-spy": {
+      "metric": "etf-spy",
+      "display_name": "SPY (S&P 500 ETF)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 1.2, "change_7d_available": true, "change_30d": 2.6, "change_30d_available": true, "change_unit": "percent" },
+      "context": "SPY at $671.20; 7d +1.2%, 30d +2.6%.",
+      "source": "Acme",
+      "notices": ["Powered by Acme."],
+      "data_quality": { "status": "fresh" }
+    },
+    "etf-qqq": {
+      "metric": "etf-qqq",
+      "display_name": "QQQ (Nasdaq 100 ETF)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 2.0, "change_7d_available": true, "change_unit": "percent" },
+      "context": "QQQ at $598.41; 7d +2.0%.",
+      "source": "Acme",
+      "notices": ["Powered by Acme."],
+      "data_quality": { "status": "fresh" }
+    },
+    "etf-iwm": {
+      "metric": "etf-iwm",
+      "display_name": "IWM (Russell 2000 ETF)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "falling", "change_7d": -0.4, "change_7d_available": true, "change_unit": "percent" },
+      "context": "IWM at $243.10; 7d -0.4%.",
+      "source": "Acme",
+      "notices": ["Powered by Acme."],
+      "data_quality": { "status": "fresh" }
+    },
+    "etf-tlt": {
+      "metric": "etf-tlt",
+      "display_name": "TLT (20+ Year Treasury ETF)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "falling", "change_7d": -0.8, "change_7d_available": true, "change_unit": "percent" },
+      "context": "TLT at $89.95; 7d -0.8%.",
+      "source": "Acme",
+      "notices": ["Powered by Acme."],
+      "data_quality": { "status": "fresh" }
+    },
+    "etf-hyg": {
+      "metric": "etf-hyg",
+      "display_name": "HYG (High Yield Corporate Bond ETF)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "stable", "change_7d": 0.1, "change_7d_available": true, "change_unit": "percent" },
+      "context": "HYG at $80.62; 7d +0.1%.",
+      "source": "Acme",
+      "notices": ["Powered by Acme."],
+      "data_quality": { "status": "fresh" }
+    },
+    "etf-vxx": {
+      "metric": "etf-vxx",
+      "display_name": "VXX (VIX Short-Term Futures ETN)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "falling", "change_7d": -6.3, "change_7d_available": true, "change_unit": "percent" },
+      "context": "VXX at $41.30; 7d -6.3%.",
+      "source": "Acme",
+      "notices": ["Powered by Acme."],
+      "data_quality": { "status": "fresh" }
+    },
+    "etf-uup": {
+      "metric": "etf-uup",
+      "display_name": "UUP (US Dollar Index Bullish Fund)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 0.3, "change_7d_available": true, "change_unit": "percent" },
+      "context": "The dollar fund (UUP) at $27.12 a share; 7d +0.3%.",
+      "source": "Acme",
+      "notices": ["Powered by Acme."],
+      "data_quality": { "status": "fresh" }
+    },
+    "etf-gld": {
+      "metric": "etf-gld",
+      "display_name": "GLD (Gold ETF)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 1.1, "change_7d_available": true, "change_unit": "percent" },
+      "context": "GLD at $377.80; 7d +1.1%.",
+      "source": "Acme",
+      "notices": ["Powered by Acme."],
+      "data_quality": { "status": "fresh" }
+    },
+    "oil-wti": {
+      "metric": "oil-wti",
+      "display_name": "WTI Crude Oil",
+      "timestamp": "2026-10-13T00:00:00.000Z",
+      "trend": { "direction": "falling", "change_7d": -2.4, "change_7d_available": true, "change_unit": "percent" },
+      "context": "WTI crude at $58.23/bbl; 7d -2.4%.",
+      "source": "Sample",
+      "notices": ["Source: Sample Energy Office."],
+      "data_quality": { "status": "fresh" }
+    },
+    "cot-spx-noncomm-net": {
+      "metric": "cot-spx-noncomm-net",
+      "display_name": "S&P 500 Noncommercial Net Position",
+      "timestamp": "2026-10-09T19:30:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 6120, "change_7d_available": true, "change_unit": "absolute" },
+      "context": "S&P 500 e-mini non-commercial net position at -48,213 contracts; 7d +6,120.",
+      "source": "Sample Positions Office, weekly report (futures only)",
+      "notices": ["Source: Sample Positions Office Commitments of Traders."],
+      "data_quality": { "status": "fresh" }
+    },
+    "cot-spx-noncomm-net-percentile-26w": {
+      "metric": "cot-spx-noncomm-net-percentile-26w",
+      "display_name": "S&P 500 Noncommercial Net, 26 Week Percentile",
+      "timestamp": "2026-10-09T19:30:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 11.5, "change_7d_available": true, "change_unit": "absolute" },
+      "context": "S&P 500 e-mini noncommercial net position at percentile 61.5 of the prior 26 weekly reports (100 is the most net long); 7d +11.5.",
+      "source": "Sample Positions Office, weekly report (futures only)",
+      "notices": ["PreReason's calculation from the Sample Positions Office Commitments of Traders.", "Source: Sample Positions Office Commitments of Traders."],
+      "data_quality": { "status": "fresh" }
+    },
+    "cot-spx-noncomm-net-percentile-52w": {
+      "metric": "cot-spx-noncomm-net-percentile-52w",
+      "display_name": "S&P 500 Noncommercial Net, 52 Week Percentile",
+      "timestamp": "2026-10-09T19:30:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 8.0, "change_7d_available": true, "change_unit": "absolute" },
+      "context": "S&P 500 e-mini noncommercial net position at percentile 70.2 of the prior 52 weekly reports (100 is the most net long); 7d +8.0.",
+      "source": "Sample Positions Office, weekly report (futures only)",
+      "notices": ["PreReason's calculation from the Sample Positions Office Commitments of Traders.", "Source: Sample Positions Office Commitments of Traders."],
+      "data_quality": { "status": "fresh" }
+    },
+    "cot-spx-noncomm-net-percentile-156w": {
+      "metric": "cot-spx-noncomm-net-percentile-156w",
+      "display_name": "S&P 500 Noncommercial Net, 156 Week Percentile",
+      "timestamp": "2026-10-09T19:30:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 4.5, "change_7d_available": true, "change_unit": "absolute" },
+      "context": "S&P 500 e-mini noncommercial net position at percentile 83.0 of the prior 156 weekly reports (100 is the most net long); 7d +4.5.",
+      "source": "Sample Positions Office, weekly report (futures only)",
+      "notices": ["PreReason's calculation from the Sample Positions Office Commitments of Traders.", "Source: Sample Positions Office Commitments of Traders."],
+      "data_quality": { "status": "fresh" }
+    },
+    "treasury-10y": {
+      "metric": "treasury-10y",
+      "display_name": "10Y Treasury Yield",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 0.06, "change_7d_available": true, "change_30d": -0.11, "change_30d_available": true, "change_unit": "absolute" },
+      "context": "10Y Treasury yield at 4.12%; 7d +0.06 pp, 30d -0.11 pp.",
+      "source": "Sample",
+      "data_quality": { "status": "fresh" }
+    },
+    "etf-lqd": {
+      "metric": "etf-lqd",
+      "display_name": "LQD (Investment Grade Corporate Bond ETF)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "falling", "change_7d": -0.3, "change_7d_available": true, "change_30d": 0.4, "change_30d_available": true, "change_unit": "percent" },
+      "context": "LQD at $108.40; 7d -0.3%, 30d +0.4%.",
+      "source": "Sample",
+      "data_quality": { "status": "fresh" }
+    },
+    "eur-usd": {
+      "metric": "eur-usd",
+      "display_name": "EUR/USD",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "falling", "change_7d": -0.4, "change_7d_available": true, "change_30d": -1.1, "change_30d_available": true, "change_unit": "percent" },
+      "context": "EUR/USD at 1.1642; 7d -0.4%, 30d -1.1%.",
+      "source": "Sample",
+      "data_quality": { "status": "fresh" }
+    },
+    "jpy-usd": {
+      "metric": "jpy-usd",
+      "display_name": "USD/JPY",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 0.7, "change_7d_available": true, "change_30d": -0.9, "change_30d_available": true, "change_unit": "percent" },
+      "context": "USD/JPY at 150.12; 7d +0.7%, 30d -0.9%.",
+      "source": "Sample",
+      "data_quality": { "status": "fresh" }
+    },
+    "etf-slv": {
+      "metric": "etf-slv",
+      "display_name": "SLV (Silver ETF)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 2.3, "change_7d_available": true, "change_30d": 6.8, "change_30d_available": true, "change_unit": "percent" },
+      "context": "SLV at $44.10; 7d +2.3%, 30d +6.8%.",
+      "source": "Sample",
+      "data_quality": { "status": "fresh" }
+    },
+    "etf-cper": {
+      "metric": "etf-cper",
+      "display_name": "CPER (Copper ETF)",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "falling", "change_7d": -1.4, "change_7d_available": true, "change_30d": 2.0, "change_30d_available": true, "change_unit": "percent" },
+      "context": "CPER at $31.25; 7d -1.4%, 30d +2.0%.",
+      "source": "Sample",
+      "data_quality": { "status": "fresh" }
+    },
+    "oil-brent": {
+      "metric": "oil-brent",
+      "display_name": "Brent Crude Oil",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "falling", "change_7d": -2.1, "change_7d_available": true, "change_30d": -4.5, "change_30d_available": true, "change_unit": "percent" },
+      "context": "Brent crude at $66.80/bbl; 7d -2.1%, 30d -4.5%.",
+      "source": "Sample",
+      "data_quality": { "status": "fresh" }
+    },
+    "bitcoin-price": {
+      "metric": "bitcoin-price",
+      "display_name": "Bitcoin Price",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "rising", "change_7d": 0.6, "change_7d_available": true, "change_30d": 8.6, "change_30d_available": true, "change_unit": "percent" },
+      "context": "Bitcoin at $82,099.23; 7d +0.6%, 30d +8.6%.",
+      "source": "Sample",
+      "data_quality": { "status": "fresh" }
+    },
+    "ethereum-price": {
+      "metric": "ethereum-price",
+      "display_name": "Ethereum Price",
+      "timestamp": "2026-10-13T13:45:00.000Z",
+      "trend": { "direction": "falling", "change_7d": -1.8, "change_7d_available": true, "change_30d": 4.2, "change_30d_available": true, "change_unit": "percent" },
+      "context": "Ether at $3,912.40; 7d -1.8%, 30d +4.2%.",
+      "source": "Sample",
+      "data_quality": { "status": "fresh" }
+    }
+  }
+}

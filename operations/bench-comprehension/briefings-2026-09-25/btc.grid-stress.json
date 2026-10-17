@@ -1,0 +1,178 @@
+{
+  "briefing_used": "btc.grid-stress",
+  "briefing_metadata": {
+    "name": "Grid Stress",
+    "description": "Mining network health - block production speed and upcoming difficulty adjustment forecast",
+    "tier": "free",
+    "metrics_count": 4,
+    "correlations_count": 2,
+    "correlations_window_days": 30,
+    "data_access": "All available data",
+    "glossary": {
+      "uri": "/api/context/glossary",
+      "version": "0c4345b145bd"
+    },
+    "earliest_usable_date": "2009-01-03"
+  },
+  "date": "2026-09-25",
+  "metrics": {
+    "bitcoin-difficulty": {
+      "name": "bitcoin-difficulty",
+      "value_formatted": "132.8T",
+      "timestamp": "2026-09-25T00:00:00+00:00",
+      "signal": "bullish",
+      "regulatory_mode": "signal",
+      "confidence": 90,
+      "confidence_label": "Very High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 100,
+        "percentile_score": 100,
+        "data_quality": 100
+      },
+      "context": "Mining difficulty at 132.8T, +5.5% over 30d. Network competition intensifying: hashrate rising faster than expected.",
+      "trend": {
+        "direction": "rising",
+        "change_1d": 0,
+        "change_1d_available": true,
+        "change_7d": 4.16,
+        "change_30d": 5.52,
+        "change_90d": -0.83,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "accelerating",
+        "percentile": 91,
+        "percentile_label": "unusually fast growth"
+      }
+    },
+    "bitcoin-hash-rate": {
+      "name": "bitcoin-hash-rate",
+      "value_formatted": "933.46 EH/s",
+      "timestamp": "2026-09-25T00:00:00+00:00",
+      "signal": "neutral",
+      "regulatory_mode": "signal",
+      "confidence": 42,
+      "confidence_label": "Low",
+      "confidence_factors": {
+        "signal_strength": 46,
+        "trend_consistency": 20,
+        "percentile_score": 38,
+        "data_quality": 100
+      },
+      "context": "Hash rate at 933.46 EH/s, up 4.2% over 7d. Accelerating: network security strengthening, miners deploying capacity.",
+      "trend": {
+        "direction": "rising",
+        "change_1d": 11.58,
+        "change_1d_available": true,
+        "change_7d": 4.22,
+        "change_30d": 4.84,
+        "change_90d": -3.84,
+        "change_unit": "percent",
+        "direction_horizon": "7d",
+        "momentum": "accelerating",
+        "percentile": 61,
+        "percentile_label": "moderate growth"
+      }
+    },
+    "epoch-pace": {
+      "name": "epoch-pace",
+      "value_formatted": "+3.1%",
+      "timestamp": "2026-09-25T09:05:24.267+00:00",
+      "signal": "bullish",
+      "regulatory_mode": "signal",
+      "confidence": 87,
+      "confidence_label": "High",
+      "confidence_factors": {
+        "signal_strength": 100,
+        "trend_consistency": 60,
+        "percentile_score": 93,
+        "data_quality": 100
+      },
+      "context": "Epoch pace at +3.1%: blocks near 10-min target. Hashrate stable relative to difficulty. No significant adjustment pressure.",
+      "trend": {
+        "direction": "rising",
+        "change_1d": -0.83,
+        "change_1d_available": true,
+        "change_7d": 6.77,
+        "change_30d": 0.29,
+        "change_90d": 16.49,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "accelerating",
+        "percentile": 88,
+        "percentile_label": "high"
+      }
+    },
+    "hash-ribbon": {
+      "name": "hash-ribbon",
+      "value_formatted": "1.016",
+      "timestamp": "2026-09-25T09:05:24.267+00:00",
+      "signal": "bullish",
+      "regulatory_mode": "signal",
+      "confidence": 44,
+      "confidence_label": "Low",
+      "confidence_factors": {
+        "signal_strength": 11,
+        "trend_consistency": 100,
+        "percentile_score": 0,
+        "data_quality": 100
+      },
+      "context": "Hash Ribbon at 1.0160 (bullish, day 29).",
+      "trend": {
+        "direction": "rising",
+        "change_1d": 0.00423,
+        "change_1d_available": true,
+        "change_7d": 0.01,
+        "change_30d": 0.02,
+        "change_90d": 0.04,
+        "change_unit": "absolute",
+        "direction_horizon": "7d",
+        "momentum": "steady",
+        "percentile": 31,
+        "percentile_label": "below average"
+      }
+    }
+  },
+  "correlations": {
+    "bitcoin-hash-rate_vs_bitcoin-difficulty": {
+      "pair": "bitcoin-hash-rate_vs_bitcoin-difficulty",
+      "metric1": "bitcoin-hash-rate",
+      "metric2": "bitcoin-difficulty",
+      "value": null,
+      "interpretation": "Insufficient variance: bitcoin-difficulty changes infrequently (7% of days had movement). Daily return correlation not meaningful for this pair.",
+      "unavailable_reason": "bitcoin-difficulty had meaningful daily returns on only 7% of days"
+    },
+    "hash-ribbon_vs_bitcoin-hash-rate": {
+      "pair": "hash-ribbon_vs_bitcoin-hash-rate",
+      "metric1": "hash-ribbon",
+      "metric2": "bitcoin-hash-rate",
+      "value": 0.07,
+      "interpretation": "No meaningful correlation (+0.07)",
+      "observations": 29,
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-25",
+      "return_horizon_days": 1,
+      "return_cadence": "daily",
+      "max_gap_days": 1,
+      "declared_window_days": 30,
+      "effective_window_days": 30
+    }
+  },
+  "basic_context": {
+    "bitcoin-difficulty": "Mining difficulty adjusts every 2016 blocks (~2 weeks) based on hash rate",
+    "bitcoin-hash-rate": "Total network computational power securing Bitcoin (higher = more secure)",
+    "epoch-pace": "Blocks mining 3.1% slower than 10-min target (difficulty decrease expected)",
+    "hash-ribbon": "Miner recovery mode (30d MA above 60d MA) - healthy network expansion"
+  },
+  "generated_at": "2026-09-25T09:05:44.450Z",
+  "data_quality": {
+    "metrics_available": 4,
+    "metrics_total": 4,
+    "correlations_computable": 2,
+    "correlations_total": 2,
+    "unavailable_metrics": [],
+    "unavailable_correlations": [],
+    "health_score": 100,
+    "severity": "ok"
+  }
+}
