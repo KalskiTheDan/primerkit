@@ -1,6 +1,6 @@
 {
   "name": "primerkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ask PreReason's market briefings with every claim cited to a numbered line and checked on this machine, and read what changed since the last digest.",
   "license": "Apache-2.0"
 }

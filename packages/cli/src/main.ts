@@ -785,9 +785,16 @@ async function doctor(): Promise<number> {
 // The broker's questions go to a person at a terminal: terminal.ts says what that is.
 const io = (): Io => ({ print, fail, ask: askLine, terminal: isTerminal() });
 
+// A broker's connect screen opens with primerkit's mark, small, in the colours and glyphs
+// --version uses on this terminal: the name and tagline alone where it draws plain text.
+function connectIo(args: Args): Io {
+  const { color, ascii } = modesOf(args);
+  return { ...io(), mark: lockup(maker(ascii), ascii, 'small').map((l) => renderLine(l, color)) };
+}
+
 function connect(args: Args): Promise<number> {
-  if (args.rest[0] === 'alpaca') return connectAlpaca(io(), args.flags.has('--remove'));
-  if (args.rest[0] === 'robinhood') return connectRobinhood(io(), { ...(flag(args, '--host') ? { host: flag(args, '--host') } : {}), remove: args.flags.has('--remove'), yes: args.flags.has('--yes'), install: installOptions() });
+  if (args.rest[0] === 'alpaca') return connectAlpaca(connectIo(args), args.flags.has('--remove'));
+  if (args.rest[0] === 'robinhood') return connectRobinhood(connectIo(args), { ...(flag(args, '--host') ? { host: flag(args, '--host') } : {}), remove: args.flags.has('--remove'), yes: args.flags.has('--yes'), install: installOptions() });
   if (args.rest[0] !== 'prereason') return Promise.resolve(fail('primerkit connect prereason, primerkit connect alpaca, or primerkit connect robinhood --host <app>'));
   return connectPrereason({ print, fail, home: primerkitHome(), version: VERSION });
 }

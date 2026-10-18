@@ -1,7 +1,7 @@
 import { join } from 'node:path';
 import { approveLiveIntent, findLiveIntent, listLiveIntents, liveIntentLines, primerkitHome, readConfig, readLiveIntent, writeConfig, type Config } from '@primerkit/core';
 import { HOST_NAMES, ROBINHOOD_HOSTS, ROBINHOOD_SERVER, ROBINHOOD_URL, applyInstall, describePlan, describeRemoval, planRobinhood, removeInstall, systemRunner, type Host, type InstallOptions, type InstallPlan, type Runner } from '@primerkit/mcp-server';
-import type { Io } from './broker';
+import { marked, type Io } from './broker';
 
 // Robinhood live trading, through Robinhood's own hosted server. primerkit adds that server
 // and the trade skill to the person's AI app, on a yes typed at a terminal, and sends no order
@@ -81,7 +81,7 @@ export async function connectRobinhood(io: Io, o: RobinhoodOptions): Promise<num
   if (o.remove) {
     // The server goes only where primerkit added it; the skill is primerkit's own.
     const plan = { ...full, steps: full.steps.filter((s) => s.kind === 'file' || added.includes(host)) };
-    io.print([`Taking Robinhood out of ${plan.name} makes these changes, each where primerkit's part is found:`, ...describeRemoval(plan).map((l) => `  ${l}`), ...(added.includes(host) ? [] : [`  (primerkit did not add Robinhood's server to ${plan.name}, so it stays.)`]), '']);
+    io.print(marked(io, [`Taking Robinhood out of ${plan.name} makes these changes, each where primerkit's part is found:`, ...describeRemoval(plan).map((l) => `  ${l}`), ...(added.includes(host) ? [] : [`  (primerkit did not add Robinhood's server to ${plan.name}, so it stays.)`]), '']));
     if (!o.yes) {
       if (!io.terminal) return io.fail('Nothing was changed. Run the same command with --yes to make them.');
       if ((await io.ask('Make them? Type yes to make them: ')).trim().toLowerCase() !== 'yes') {
@@ -102,7 +102,7 @@ export async function connectRobinhood(io: Io, o: RobinhoodOptions): Promise<num
       return io.fail((error as Error).message);
     }
   }
-  io.print(robinhoodLines(host, full));
+  io.print(marked(io, robinhoodLines(host, full)));
   // Live money: the yes is typed by a person at a terminal, and no flag stands in for it.
   if (!io.terminal) return io.fail(noTerminal('The yes for adding Robinhood is typed'));
   if ((await io.ask('Make them? Type yes to make them: ')).trim().toLowerCase() !== 'yes') {

@@ -5,7 +5,7 @@ import { get as httpsGet } from 'node:https';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { COMPARE_FOOTER, demoDeps } from '@primerkit/session';
 import {
   FIXTURE_GIFS,
@@ -42,6 +42,11 @@ import { RESEARCH_RUN_ID, compareSession, marketSession, researchSession } from 
 import { answers } from '../packages/session/test/market-fixture';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+
+// Drawing to pixels loads the machine's fonts, and a shared runner can take longer than vitest's
+// 5 s for one test that draws pictures (macOS took 5.4 s on 2026-10-17), so every test here has
+// two minutes.
+vi.setConfig({ testTimeout: 120_000 });
 
 // A mark as a picture carries it: small, above its top right corner. Every picture drawn from
 // made-up data carries "sample data"; every demo picture the day its briefings were saved.

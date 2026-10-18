@@ -7,6 +7,7 @@ import { describe, expect, it } from 'vitest';
 import { Journal, readConfig, readLiveIntent, recordLiveIntent } from '@primerkit/core';
 import { ROBINHOOD_URL, type Runner } from '@primerkit/mcp-server';
 import { ROOT } from '@primerkit/session';
+import { TAGLINE, lockup, maker, renderLine } from '@primerkit/ui';
 import type { Io } from '../src/broker';
 import { approveCommand, connectRobinhood } from '../src/robinhood';
 
@@ -216,5 +217,53 @@ describe('--json from the command line', { timeout: 300_000 }, () => {
     expect(rh.out).toContain('adds a [mcp_servers.robinhood-trading] table');
     expect(rh.err).toContain('Nothing was changed.');
     expect(existsSync(join(home, '.codex'))).toBe(false);
+  });
+});
+
+describe("the connect screens open with primerkit's mark, and name the broker in plain words", { timeout: 200_000 }, () => {
+  // The small lockup as a colour terminal draws it, and the screen's first lines that show it.
+  const MARK = lockup(maker(false), false, 'small').map((l) => renderLine(l, 'truecolor'));
+  const opensWithMark = (out: string[]) => MARK.every((line, i) => out[i] === line) && out[MARK.length] === '';
+  const withMark = (answers: string[] = [], terminal = true): TestIo => ({ ...io(answers, terminal), mark: MARK });
+
+  it('draws the mark above the words before the yes, and keeps every word as it was', async () => {
+    const h = homes();
+    const claude = fakeClaude();
+    const marked = withMark([], false);
+    const bare = io([], false);
+    expect(await connectRobinhood(marked, { host: 'claude-code', remove: false, yes: false, install: h.install, runner: claude.runner, home: h.pk })).toBe(1);
+    expect(await connectRobinhood(bare, { host: 'claude-code', remove: false, yes: false, install: h.install, runner: claude.runner, home: h.pk })).toBe(1);
+    expect(opensWithMark(marked.out)).toBe(true);
+    // Below the mark and its blank line, the screen is the same, word for word.
+    expect(marked.out.slice(MARK.length + 1)).toEqual(bare.out);
+    expect(marked.out[MARK.length + 1]).toBe("Robinhood live trading, through Robinhood's own hosted server.");
+    // CONTROL: the screen without the mark fails the same check.
+    expect(opensWithMark(bare.out)).toBe(false);
+    // The colour is primerkit's mark alone: the broker's lines carry none, and the mark names no broker.
+    expect(MARK.some((l) => l.includes('\x1b['))).toBe(true);
+    expect(marked.out.slice(MARK.length).some((l) => l.includes('\x1b'))).toBe(false);
+    expect(MARK.join('\n')).not.toMatch(/robinhood|alpaca/i);
+  });
+
+  it('draws the mark above the screen that takes Robinhood out', async () => {
+    const h = homes();
+    const claude = fakeClaude();
+    expect(await connectRobinhood(io(['yes', 'no']), { host: 'claude-code', remove: false, yes: false, install: h.install, runner: claude.runner, home: h.pk })).toBe(0);
+    const out = withMark();
+    expect(await connectRobinhood(out, { host: 'claude-code', remove: true, yes: true, install: h.install, runner: claude.runner, home: h.pk })).toBe(0);
+    expect(opensWithMark(out.out)).toBe(true);
+    expect(out.out[MARK.length + 1]).toBe("Taking Robinhood out of Claude Code makes these changes, each where primerkit's part is found:");
+  });
+
+  it('draws the name and tagline as plain text where the output is a pipe, as --version does', async () => {
+    const home = mkdtempSync(join(tmpdir(), 'pk-cli-mark-'));
+    mkdirSync(join(home, '.primerkit'));
+    const shown = await run(['connect', 'robinhood', '--host', 'claude-code'], home);
+    expect(shown.code).toBe(1);
+    expect(shown.out.startsWith(` primerkit\n ${TAGLINE}\n\nRobinhood live trading, through Robinhood's own hosted server.\n`)).toBe(true);
+    expect(shown.out).not.toContain('\x1b');
+    expect(shown.err).toMatch(/at a terminal, and this run has none/);
+    // Nothing was changed: no app's settings were written.
+    expect(readdirSync(home)).toEqual(['.primerkit']);
   });
 });

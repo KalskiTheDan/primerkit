@@ -1,16 +1,16 @@
 {
   "name": "@primerkit/session",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "@primerkit/connector-prereason": "0.1.0",
-    "@primerkit/core": "0.1.0",
-    "@primerkit/models": "0.1.0",
-    "@primerkit/ui": "0.1.0",
+    "@primerkit/connector-prereason": "0.1.1",
+    "@primerkit/core": "0.1.1",
+    "@primerkit/models": "0.1.1",
+    "@primerkit/ui": "0.1.1",
     "@resvg/resvg-js": "^2.6.2"
   }
 }

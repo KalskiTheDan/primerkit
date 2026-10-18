@@ -8,7 +8,7 @@
 import { spawn } from 'node:child_process';
 import { join } from 'node:path';
 
-const VERSION = '0.1.0';
+const VERSION = '0.1.1';
 
 const npx = ['npx', '-y', `primerkit@${VERSION}`, 'mcp'];
 const root = [process.env.SystemRoot, process.env.windir].find((v) => v !== undefined && /^[A-Za-z]:[\\/]/.test(v)) ?? 'C:\\Windows';

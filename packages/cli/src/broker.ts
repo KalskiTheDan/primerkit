@@ -15,10 +15,16 @@ export interface Io {
   fail(message: string): number;
   ask(question: string, hidden?: boolean): Promise<string>;
   terminal: boolean; // the input and the output are both a terminal
+  mark?: string[]; // primerkit's mark and name as this terminal draws them, atop a connect screen
   keychain?: Keychain;
   base?: string; // a fake Alpaca for tests
   fetch?: typeof fetch; // the calls as they are made, for tests
 }
+
+// A connect screen opens with primerkit's own mark, as --version draws it. The broker is
+// named in plain words below it: no broker's logo, wordmark or colours, which could read as
+// a partnership the broker never agreed to.
+export const marked = (io: Io, lines: string[]): string[] => (io.mark?.length ? [...io.mark, '', ...lines] : lines);
 
 // The keys, a yes for an order and turning a stopped connection back on are asked only at
 // a terminal: where the input or the output is a pipe or a file, nothing is asked and
@@ -69,21 +75,21 @@ export async function connectAlpaca(io: Io, remove: boolean): Promise<number> {
       await kc.remove(SECRET);
       const after = [await kc.get(KEY_ID), await kc.get(SECRET)];
       if (after.some((v) => v !== null)) throw new Error('an entry is still there after it was removed');
-      io.print([before.some((v) => v !== null) ? 'The Alpaca keys are out of the keychain, and the connection is off.' : 'No Alpaca keys were kept. The connection is off.']);
+      io.print(marked(io, [before.some((v) => v !== null) ? 'The Alpaca keys are out of the keychain, and the connection is off.' : 'No Alpaca keys were kept. The connection is off.']));
       return 0;
     } catch (error) {
       return io.fail(`The connection is off, but the Alpaca keys could not be taken out of the keychain and may still be kept: ${(error as Error).message}. Try again, or remove the entries primerkit/${KEY_ID} and primerkit/${SECRET} in your system's keychain by hand.`);
     }
   }
   if (!io.terminal) return io.fail(noTerminal('The keys are typed'));
-  io.print([
+  io.print(marked(io, [
     'Alpaca paper trading. Make paper keys in your Alpaca dashboard; they place no real orders.',
     'The keys are kept in this machine\'s keychain and sent only to Alpaca. Type them here: primerkit takes',
     'them from nowhere else, and never from an environment variable.',
     '',
     ...DISCLAIMER_POINTS.map((point) => `  ${point.join(' ')}`),
     '',
-  ]);
+  ]));
   const keyId = (await io.ask('Paper key id: ')).trim();
   const secret = (await io.ask('Paper secret: ', true)).trim();
   if (!keyId || !secret) return io.fail('Nothing was kept: both the key id and the secret are needed.');

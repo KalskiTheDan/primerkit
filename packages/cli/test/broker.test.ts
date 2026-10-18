@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { BrokerLog, type Keychain } from '@primerkit/brokers';
 import { loadRoutine, newRoutine, readConfig, readIntent, routinesDir, writeConfig, type ForwardEntry } from '@primerkit/core';
+import { lockup, maker, renderLine } from '@primerkit/ui';
 import { brokerCommand, connectAlpaca, routineIntent, type Io } from '../src/broker';
 import { intentCommand } from '../src/intent';
 import { doctorLine, forTerminal, isTerminal } from '../src/terminal';
@@ -236,6 +237,28 @@ describe('primerkit connect alpaca', () => {
     stuck.keychain = { set: async () => undefined, get: async (n) => stuck.store.get(n) ?? null, remove: async () => true };
     expect(await connectAlpaca(stuck, true)).toBe(1);
     expect(stuck.errors.at(-1)).toContain('an entry is still there after it was removed');
+  });
+
+  it("opens with primerkit's mark, names Alpaca in plain words, and keeps every word as it was", async () => {
+    const MARK = lockup(maker(false), false, 'small').map((l) => renderLine(l, 'truecolor'));
+    const opensWithMark = (out: string[]) => MARK.every((line, i) => out[i] === line) && out[MARK.length] === '';
+    const marked = { ...io(['PKPAPER', 'paper-secret']), mark: MARK };
+    const bare = io(['PKPAPER', 'paper-secret']);
+    expect(await connectAlpaca(marked, false)).toBe(0);
+    expect(await connectAlpaca(bare, false)).toBe(0);
+    expect(opensWithMark(marked.out)).toBe(true);
+    expect(marked.out[MARK.length + 1]).toBe('Alpaca paper trading. Make paper keys in your Alpaca dashboard; they place no real orders.');
+    expect(marked.out.slice(MARK.length + 1)).toEqual(bare.out);
+    // CONTROL: the screen without the mark fails the same check.
+    expect(opensWithMark(bare.out)).toBe(false);
+    // The colour is primerkit's mark alone; Alpaca's lines carry none.
+    expect(marked.out.slice(MARK.length).some((l) => l.includes('\x1b'))).toBe(false);
+    // The screen that takes the keys out opens with it too.
+    const out = { ...(await connected()), mark: MARK };
+    out.out.length = 0;
+    expect(await connectAlpaca(out, true)).toBe(0);
+    expect(opensWithMark(out.out)).toBe(true);
+    expect(out.out.slice(MARK.length + 1)).toEqual(['The Alpaca keys are out of the keychain, and the connection is off.']);
   });
 });
 

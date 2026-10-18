@@ -1,0 +1,81 @@
+# The release, on a v* tag in the public repository. The build job tests the tagged commit,
+# builds the npm package and packs it, prints the tarball's sha256 and keeps the tarball. The
+# publish job runs in the "npm" environment, so it starts only once its reviewer approves it on
+# GitHub; it stages that very tarball on npm through trusted publishing (OIDC, no token), and the
+# staged version is published once a maintainer approves it on npm, with two factor
+# authentication. Started by hand (Actions, release, Run workflow), only the build job runs, and
+# nothing is published.
+name: release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: ${{ github.repository == 'KalskiTheDan/primerkit' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      tarball: ${{ steps.pack.outputs.tarball }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 22.x
+          package-manager-cache: false
+      - run: npm ci
+      - name: A tag names the version the package carries
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          version=$(node -p "require('./packages/cli/package.json').version")
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "The tag is $GITHUB_REF_NAME but the package is $version."
+            exit 1
+          fi
+      - run: npm run typecheck
+      - run: npx vitest run
+      - run: npm run smoke
+      - run: npm run build
+      - id: pack
+        run: |
+          npm pack ./dist/package --pack-destination .
+          tarball=$(ls primerkit-*.tgz)
+          sha256sum "$tarball"
+          echo "tarball=$tarball" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: tarball
+          path: primerkit-*.tgz
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: npm
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: tarball
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 22.x
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      # Trusted publishing needs npm 11.5.1 or later; `npm stage publish` came later still.
+      - run: npm install --global npm@11.21.0
+      - run: sha256sum "${{ needs.build.outputs.tarball }}"
+      - run: npm stage publish "./${{ needs.build.outputs.tarball }}" --access public --provenance

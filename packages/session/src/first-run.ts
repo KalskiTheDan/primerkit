@@ -4,7 +4,7 @@
 export const DISCLAIMER_POINTS: ReadonlyArray<readonly string[]> = [
   ['primerkit runs on this machine, with the model you choose.'],
   ['Your model and your primers make every decision.'],
-  ['PreReason publishes the same general market briefings to everyone who', 'subscribes. It never sees your questions, answers, holdings or orders.'],
+  ['PreReason publishes general market briefings, the same for everyone on', 'the same plan. It never sees your questions, answers, holdings or orders.'],
   ['Nothing here is investment advice.'],
   ['Broker connections stay off until you turn them on. Paper trading is', 'the default wherever the broker offers it.'],
 ];
